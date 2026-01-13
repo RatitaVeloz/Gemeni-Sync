@@ -1,0 +1,52 @@
+# Refine Mobile Modal Design
+
+The user wants the mobile modal to:
+1.  Allow the site header to be visible (modal overlay below header).
+2.  Have the "Close" button aligned to the left as plain text ("x Cerrar").
+3.  Have the filter container styled with a border (`#B0B8C7`) similar to the desktop version.
+
+## User Review Required
+> [!NOTE]
+> I will adjust the `z-index` of the modal to be lower than the header. This assumes the header has a `z-index` greater than 9990.
+
+## Proposed Changes
+
+### Theme: hello-elementor-child
+
+#### [MODIFY] [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css)
+Update the CSS rules added in the previous step:
+
+1.  **Modal Wrapper (`.op-filters-modal-wrapper`)**:
+    *   Change `z-index` to `9990` (below Elementor sticky header which is usually `9997` or `10000`).
+    *   Ensure `padding-top` accounts for the header if necessary, or let the overlay sit behind. *Decision: Full screen overlay `top:0`, z-index lower.*
+    *   Change `align-items` to `flex-start` or `center`? User said "debajo esta 'x cerrar' a la izquierda y debajo el filtro".
+    *   We need a column layout: [Spacer for Header] -> [Close Button Row] -> [Filter Box].
+    *   Actually, if `z-index` is lower, the header covers the top. The "Close" button should be below the header.
+    *   I'll add `padding-top: 100px` (approx header height) to the wrapper to push content down? Or use `margin-top`.
+
+2.  **Close Button (`.op-modal-close`)**:
+    *   Remove absolute positioning `top: -50px`.
+    *   Make it `display: block` (or flex).
+    *   `width: 100%`.
+    *   `text-align: left`.
+    *   `background: transparent`.
+    *   `color: #fff` or `#333`? Image 2 shows "x Cerrar" on a dark overlay, so text should be white or light gray.
+    *   Wait, image 2 shows "x Cerrar" on the *gray overlay*.
+    *   So: `color: #ffffff` (or light).
+    *   `padding: 10px 20px`.
+
+3.  **Modal Content (`.op-filters-modal-content`)**:
+    *   Add `border: 1px solid #B0B8C7`.
+    *   `border-radius: 16px 16px 0 0` (or 16px all around if it doesn't touch bottom).
+    *   `margin: 0 15px`.
+    *   `height: auto` or `max-height`.
+    *   `background: #ffffff`.
+
+## Verification Plan
+
+### Manual Verification
+1.  **Mobile View**:
+    *   Open modal.
+    *   Verify Header is visible on top.
+    *   Verify "x Cerrar" is on the left, below the header.
+    *   Verify Filter Box has the border `#B0B8C7` and looks like a card.

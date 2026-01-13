@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Refinement to full width mobile modal.\n1.  Remove `padding` and `margin-bottom` from `.op-filters-modal-content` to make it touch the edges.\n2.  Update `.op-sidebar-mobile` to remove side/bottom borders and use top-only border radius.\n3.  Ensure `max-width` allows full width on mobile.",
+  "updatedAt": "2026-01-13T14:10:13.320261400Z",
+  "version": "4"
+}

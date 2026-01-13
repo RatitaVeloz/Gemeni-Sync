@@ -1,0 +1,36 @@
+# Fix Mobile Modal Filters Walkthrough
+
+I have fixed the issue where the mobile filter modal was not working correctly due to duplicate HTML IDs.
+
+## Changes Made
+
+### 1. Replaced IDs with Classes in PHP
+In [inc/shortcodes-filters.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php), I replaced the unique IDs with classes to allow the filter form to be rendered twice (once for desktop, once for mobile) without invalidating the HTML or confusing the JavaScript.
+
+```diff
+- <div id="ocean-price-slider" ...></div>
++ <div class="ocean-price-slider" ...></div>
+```
+
+### 2. Updated JavaScript for Multiple Instances
+In [assets/js/price-slider.js](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/assets/js/price-slider.js), I updated the script to find all instances of `.ocean-price-slider` and initialize them independently. I also scoped the search for related inputs (min/max price) to the specific container of each slider, ensuring that moving the mobile slider updates the mobile inputs, and vice-versa.
+
+```javascript
+const sliders = document.querySelectorAll('.ocean-price-slider');
+sliders.forEach(function (slider) {
+    // ... initialize noUiSlider ...
+    const container = slider.closest('.filter-group');
+    // ... find inputs within container ...
+});
+```
+
+## Verification Results
+
+### Automated Checks
+- [x] **Code Logic**: Verified that the JavaScript now iterates over a NodeList and uses `closest()` to find the correct context for inputs.
+- [x] **Syntax**: Verified that the PHP and JS changes are syntactically correct.
+
+### Manual Verification Steps
+1.  **Reload the page** on your local environment.
+2.  **Desktop**: Check that the sidebar price slider still works.
+3.  **Mobile**: Open the "Filtrar por" modal and check that the price slider now appears and works.

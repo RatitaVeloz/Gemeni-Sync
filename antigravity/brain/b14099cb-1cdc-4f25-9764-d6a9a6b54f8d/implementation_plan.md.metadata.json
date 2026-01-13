@@ -1,0 +1,5 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Plan to set up Git synchronization for Gemini conversations, ensuring sensitive data is excluded.",
+  "updatedAt": "2026-01-13T14:23:03.070860500Z"
+}

@@ -1,0 +1,39 @@
+# Fix CSS Visibility and Styling
+
+The current issue is that both the desktop and mobile versions of the filters are visible simultaneously because there are no CSS rules to toggle their visibility based on screen size. Additionally, the mobile trigger button and modal components lack styling.
+
+## User Review Required
+> [!IMPORTANT]
+> I will be adding a new section at the end of [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css) to handle the responsive behavior and modal styling. This will ensure the filters behave like a sidebar on desktop and a modal on mobile.
+
+## Proposed Changes
+
+### Theme: hello-elementor-child
+
+#### [MODIFY] [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css)
+Add the following CSS rules to the end of the file:
+
+1.  **Visibility Toggles**:
+    *   Desktop (min-width: 1201px): Hide `.op-sidebar-mobile`, `.op-filters-trigger-btn`, `.op-filters-modal-wrapper`. Show `.op-sidebar-desktop`.
+    *   Mobile (max-width: 1200px): Hide `.op-sidebar-desktop`. Show `.op-filters-trigger-btn`.
+
+2.  **Mobile Trigger Button (`.op-filters-trigger-btn`)**:
+    *   Fixed position (bottom or sticky).
+    *   Styled as a prominent button.
+
+3.  **Modal Styles**:
+    *   `.op-filters-modal-wrapper`: Fixed full-screen overlay with semi-transparent background.
+    *   `.op-filters-modal-content`: Centered or slide-in container for the filters.
+    *   `.op-modal-close`: Styled close button inside the modal.
+
+## Verification Plan
+
+### Manual Verification
+1.  **Desktop View (> 1200px)**:
+    *   Verify only the sidebar is visible.
+    *   Verify the "Filtrar por" button is hidden.
+2.  **Mobile View (< 1200px)**:
+    *   Verify the sidebar is hidden.
+    *   Verify the "Filtrar por" button is visible and styled.
+    *   Click "Filtrar por" and verify the modal opens with correct styling.
+    *   Verify the "Cerrar" button works and is styled.

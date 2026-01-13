@@ -1,0 +1,1962 @@
+Êş/*
+Theme Name:   Hello Elementor Child - OP Realty Group
+Theme URI:    https://oprealty.com
+Description:  Child theme para OP Realty Group con integraciÃ³n completa de HBook motor de reservas
+Author:       Tongas Digital
+Author URI:   https://oprealty.com
+Template:     hello-elementor
+Version:      1.0.0
+Text Domain:  hello-child
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+
+
+
+/* ============================================
+   1. VARIABLES CSS
+   ============================================ */
+:root {
+    /* Colors */
+    --op-primary: #0066cc;
+    --op-secondary: #00a3e0;
+    --op-accent: #f5a623;
+    --op-text-dark: #333333;
+    --op-text-light: #666666;
+    --op-gray-light: #f5f5f5;
+    --op-border: #e0e0e0;
+    --op-white: #ffffff;
+
+    /* Typography */
+    --op-font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --op-font-heading: 'Montserrat', 'Open Sans', sans-serif;
+
+    /* Spacing */
+    --op-spacing-xs: 8px;
+    --op-spacing-sm: 16px;
+    --op-spacing-md: 24px;
+    --op-spacing-lg: 32px;
+    --op-spacing-xl: 48px;
+
+    /* Breakpoints */
+    --op-breakpoint-sm: 576px;
+    --op-breakpoint-md: 768px;
+    --op-breakpoint-lg: 992px;
+    --op-breakpoint-xl: 1200px;
+
+    /* Shadows */
+    --op-shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --op-shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --op-shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+
+    /* Border radius */
+    --op-radius-sm: 4px;
+    --op-radius-md: 8px;
+    --op-radius-lg: 12px;
+}
+
+/* ============================================
+   2. RESET Y BASE
+   ============================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--op-font-body);
+    color: var(--op-text-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--op-font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+/* ============================================
+   3. HBOOK INTEGRATION STYLES
+   ============================================ */
+
+/* HBook Booking Form Base */
+.hb_accommodation-units,
+.hbook-booking-form {
+    background: var(--op-white);
+    border-radius: var(--op-radius-md);
+    box-shadow: var(--op-shadow-md);
+    padding: var(--op-spacing-md);
+}
+
+/* HBook Date Pickers */
+.hb-date-picker input,
+input[type="date"].hb-date {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--op-border);
+    border-radius: var(--op-radius-sm);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.hb-date-picker input:focus,
+input[type="date"].hb-date:focus {
+    border-color: var(--op-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+/* HBook Buttons */
+.hbook-book-button,
+.hb-book-btn,
+button.hb-search-submit {
+    background: var(--op-primary);
+    color: var(--op-white);
+    padding: 14px 32px;
+    border: none;
+    border-radius: var(--op-radius-sm);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.hbook-book-button:hover,
+.hb-book-btn:hover,
+button.hb-search-submit:hover {
+    background: var(--op-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--op-shadow-lg);
+}
+
+/* HBook Price Display */
+.hb-price,
+.hbook-price-display {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--op-primary);
+}
+
+.hb-price-label {
+    font-size: 14px;
+    color: var(--op-text-light);
+    font-weight: 400;
+}
+
+/* ============================================
+   4. HEADER
+   ============================================ */
+.boton-azul a,
+.boton-oscuro a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    border-radius: 50px !important;
+    margin-left: 20px !important;
+    line-height: normal !important;
+    transition: all 0.3s ease;
+}
+
+.boton-azul a {
+    background-color: #006AE4;
+    color: #ffffff !important;
+    border: 1px solid #006AE4;
+}
+
+.boton-oscuro a {
+    background-color: #1B003C;
+    color: #ffffff !important;
+    border: 1px solid #1B003C;
+}
+
+.boton-azul a:hover,
+.boton-oscuro a:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.pll-parent-menu-item>a>img {
+    display: none !important;
+}
+
+.pll-parent-menu-item>a>span:not(.sub-arrow) {
+    font-size: 0 !important;
+}
+
+.pll-parent-menu-item>a>span:not(.sub-arrow)::after {
+    content: 'ESP';
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    color: #006AE4;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.pll-parent-menu-item .sub-arrow svg {
+    fill: #006AE4 !important;
+    width: 10px;
+}
+
+.pll-parent-menu-item .sub-arrow {
+    margin-left: 5px;
+}
+
+.pll-parent-menu-item .sub-menu {
+    background-color: #ffffff !important;
+    border-radius: 12px !important;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15) !important;
+    padding: 15px !important;
+    border: none !important;
+    min-width: 160px !important;
+    margin-top: 15px !important;
+}
+
+.pll-parent-menu-item .sub-menu li {
+    border: none !important;
+}
+
+.pll-parent-menu-item .sub-menu a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 8px 10px !important;
+    border-radius: 8px;
+    background: transparent !important;
+}
+
+.pll-parent-menu-item .sub-menu a:hover {
+    background-color: #f7f7f7 !important;
+}
+
+.pll-parent-menu-item .sub-menu img {
+    display: inline-block !important;
+    width: 22px !important;
+    height: auto !important;
+    margin-right: 12px !important;
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.pll-parent-menu-item .sub-menu a span {
+    font-size: 15px !important;
+    color: #222 !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    width: auto !important;
+}
+
+.pll-parent-menu-item .sub-menu a span::after {
+    content: none !important;
+}
+
+/* ============================================
+   5. SEARCH & FILTERS
+   ============================================ */
+
+/* Property Search Form */
+.op-property-search {
+    background: var(--op-white);
+    padding: var(--op-spacing-lg);
+    border-radius: var(--op-radius-lg);
+    box-shadow: var(--op-shadow-md);
+    margin: var(--op-spacing-xl) 0;
+}
+
+.property-search-form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--op-spacing-md);
+    align-items: end;
+}
+
+.search-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-field label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--op-text-dark);
+    margin-bottom: 8px;
+}
+
+.search-field input,
+.search-field select {
+    padding: 12px 16px;
+    border: 1px solid var(--op-border);
+    border-radius: var(--op-radius-sm);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: var(--op-primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+}
+
+.btn-search {
+    background: var(--op-primary);
+    color: var(--op-white);
+    padding: 12px 32px;
+    border: none;
+    border-radius: var(--op-radius-sm);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    height: 48px;
+}
+
+.btn-search:hover {
+    background: var(--op-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--op-shadow-md);
+}
+
+/* Property Filters (Sidebar) -> Moved to Elementor Custom CSS */
+
+/* ============================================
+   6. PROPERTY DETAIL PAGE
+   ============================================ */
+
+.property-detail-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--op-spacing-xl) var(--op-spacing-md);
+}
+
+/* Property Title Section */
+.property-header {
+    margin-bottom: var(--op-spacing-lg);
+}
+
+.property-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: var(--op-spacing-sm);
+}
+
+.property-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--op-text-light);
+    font-size: 16px;
+}
+
+/* ============================================
+   7. HERO GALLERY
+   ============================================ */
+
+.property-hero-gallery {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 12px;
+    height: 480px;
+    margin-bottom: var(--op-spacing-xl);
+    border-radius: var(--op-radius-lg);
+    overflow: hidden;
+}
+
+.gallery-main {
+    grid-row: 1 / 3;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-secondary {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-main img,
+.gallery-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-main:hover img,
+.gallery-secondary:hover img {
+    transform: scale(1.05);
+}
+
+/* View All Photos Button */
+.view-all-photos {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--op-white);
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--op-radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: var(--op-shadow-md);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.view-all-photos:hover {
+    background: var(--op-primary);
+    color: var(--op-white);
+    transform: translateY(-2px);
+}
+
+/* Lightbox Gallery */
+.gallery-lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+    background: var(--op-white);
+}
+
+.lightbox-prev {
+    left: -80px;
+}
+
+.lightbox-next {
+    right: -80px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--op-white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ============================================
+   8. TOUR VISUAL TABS
+   ============================================ */
+
+.property-tour-section {
+    margin: var(--op-spacing-xl) 0;
+}
+
+.tour-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: var(--op-spacing-lg);
+    overflow-x: auto;
+    border-bottom: 2px solid var(--op-border);
+}
+
+.tour-tab {
+    padding: 12px 24px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--op-text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.tour-tab:hover {
+    color: var(--op-primary);
+}
+
+.tour-tab.active {
+    color: var(--op-primary);
+    border-bottom-color: var(--op-primary);
+}
+
+.tour-content {
+    display: none;
+}
+
+.tour-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tour-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+}
+
+.tour-gallery-item {
+    height: 250px;
+    border-radius: var(--op-radius-md);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.tour-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.tour-gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   9. BOOKING WIDGET STICKY
+   ============================================ */
+
+.booking-widget-sticky {
+    position: sticky;
+    top: 100px;
+    background: var(--op-white);
+    border: 1px solid var(--op-border);
+    border-radius: var(--op-radius-lg);
+    padding: var(--op-spacing-lg);
+    box-shadow: var(--op-shadow-lg);
+}
+
+.booking-price-display {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--op-primary);
+    margin-bottom: var(--op-spacing-sm);
+}
+
+.booking-price-display span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--op-text-light);
+}
+
+.booking-form-fields {
+    margin: var(--op-spacing-md) 0;
+}
+
+.booking-field {
+    margin-bottom: var(--op-spacing-sm);
+}
+
+.booking-field label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.booking-field input,
+.booking-field select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--op-border);
+    border-radius: var(--op-radius-sm);
+    font-size: 16px;
+}
+
+.booking-submit {
+    width: 100%;
+    background: var(--op-primary);
+    color: var(--op-white);
+    padding: 16px;
+    border: none;
+    border-radius: var(--op-radius-sm);
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.booking-submit:hover {
+    background: var(--op-secondary);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   10. RESPONSIVE DESIGN
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 992px) {
+    .op-properties-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--op-spacing-md);
+    }
+
+    .property-search-form {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .property-hero-gallery {
+        grid-template-columns: 1fr 1fr;
+        height: 360px;
+    }
+
+    .gallery-main {
+        grid-column: 1 / 3;
+    }
+
+    .booking-widget-sticky {
+        position: static;
+        margin-top: var(--op-spacing-lg);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    :root {
+        --op-spacing-xl: 32px;
+        --op-spacing-lg: 24px;
+    }
+
+    .op-properties-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .property-search-form {
+        grid-template-columns: 1fr;
+    }
+
+    .property-hero-gallery {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .gallery-main {
+        grid-column: 1;
+        grid-row: 1;
+        height: 240px;
+    }
+
+    .gallery-secondary {
+        height: 180px;
+    }
+
+    .tour-tabs {
+        gap: 4px;
+    }
+
+    .tour-tab {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .property-title {
+        font-size: 28px;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+
+    /* Mobile Bottom Bar for Booking */
+    .booking-widget-sticky {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;
+        border-radius: var(--op-radius-lg) var(--op-radius-lg) 0 0;
+        padding: var(--op-spacing-md);
+        z-index: 1000;
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .property-spec-item {
+        font-size: 12px;
+    }
+
+    .property-content h3 {
+        font-size: 18px;
+    }
+
+    .property-price {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   3. PRICE SLIDER (noUiSlider Custom)
+   ========================================= */
+/* Track (Barra de fondo) */
+.noUi-horizontal {
+    height: 6px !important;
+    border: none !important;
+    background: #F2F4F8 !important;
+    /* Gris muy suave */
+    border-radius: 3px !important;
+    box-shadow: none !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Connect (Barra rellena entre puntos) */
+.noUi-connect {
+    background: #E0E7F4 !important;
+    /* Color solicitado */
+}
+
+/* Handle (Los puntos/selectores) */
+.noUi-horizontal .noUi-handle {
+    width: 20px !important;
+    height: 20px !important;
+    right: -10px !important;
+    /* Centrar correcciÃ³n */
+    top: -7px !important;
+    /* Centrar verticalmente */
+
+    background: #006AE4 !important;
+    /* Azul solicitado */
+    border: none !important;
+    /* SIN BORDE BLANCO */
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 106, 228, 0.3) !important;
+    cursor: pointer !important;
+    outline: none !important;
+}
+
+/* Quitar lÃ­neas feas por defecto dentro del handle */
+.noUi-handle:before,
+.noUi-handle:after {
+    display: none !important;
+}
+
+/* Estado Activo/Focus */
+.noUi-handle:active,
+.noUi-handle:focus {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 4px rgba(0, 106, 228, 0.1) !important;
+}
+
+
+/* =========================================
+   4. BOTÃ“N ALQUILAR ANIMADO (Arrow -> Text)
+   ========================================= */
+
+/* A. Contenedor Principal (Widget Icon Box) */
+.ocean-rent-btn.elementor-widget-icon-box {
+    width: auto !important;
+    margin-left: auto !important;
+    /* AlineaciÃ³n a la derecha */
+}
+
+.ocean-rent-btn .elementor-icon-box-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important;
+    border-radius: 50% !important;
+    width: 55px !important;
+    height: 55px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    cursor: pointer !important;
+    overflow: visible !important;
+    flex-direction: row-reverse !important;
+    position: relative !important;
+}
+
+/* B. El Icono (Wrapper) */
+.ocean-rent-btn .elementor-icon-box-icon {
+    /* Reset de Elementor */
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    background-color: transparent !important;
+
+    /* Layout */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 55px !important;
+    height: 55px !important;
+    flex-shrink: 0 !important;
+}
+
+/* C. El SVG/Icono en sÃ­ */
+.ocean-rent-btn .elementor-icon-box-icon i,
+.ocean-rent-btn .elementor-icon-box-icon svg {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 55px !important;
+    transition: all 0.3s ease !important;
+}
+
+/* D. El Contenedor del Texto (Content) */
+.ocean-rent-btn .elementor-icon-box-content {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    /* Estado inicial: Oculto */
+    width: 0 !important;
+    max-width: 0 !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* E. El Texto (TÃ­tulo del Icon Box) */
+.ocean-rent-btn .elementor-icon-box-title,
+.ocean-rent-btn .elementor-icon-box-title span {
+    color: #fff !important;
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    white-space: nowrap !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+    display: flex !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+/* ============================
+   ESTADOS HOVER (Triggered by Card)
+   ============================ */
+
+/* 1. Expandir el contenedor wrapper hacia la IZQUIERDA */
+.ocean-prop-card:hover .ocean-rent-btn .elementor-icon-box-wrapper {
+    width: 130px !important;
+    background-color: var(--op-primary) !important;
+    border-radius: 30px !important;
+    justify-content: center !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    margin-left: -75px !important;
+    /* Desplazar hacia la izquierda: 130px - 55px = 75px */
+}
+
+/* 2. OCULTAR el icono en hover */
+.ocean-prop-card:hover .ocean-rent-btn .elementor-icon-box-icon {
+    display: none !important;
+}
+
+/* 3. Mostrar el texto */
+.ocean-prop-card:hover .ocean-rent-btn .elementor-icon-box-content {
+    flex-grow: 1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    opacity: 1 !important;
+    padding: 0 !important;
+    visibility: visible !important;
+}
+
+/* ============================================
+   PROPERTY META SHORTCODES STYLING
+   ============================================ */
+.ocean-property-meta,
+.elementor-widget-shortcode .elementor-shortcode:not(.op-sidebar-filters-container *) {
+    font-family: 'Alexandria', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: #778091;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* PRICE SHORTCODE STYLING */
+.ocean-price {
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 32px !important;
+    font-weight: 600 !important;
+    color: #006AE4 !important;
+    display: inline-block !important;
+    vertical-align: bottom !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* =========================================
+   BUSCADOR DE PROPIEDADES (Global)
+   ========================================= */
+.op-property-search {
+    background-color: #1B003C !important;
+    padding: 30px 40px 50px 40px !important;
+    border-radius: 20px !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    border: none !important;
+    font-family: 'Alexandria', sans-serif !important;
+}
+
+.op-property-search .property-search-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 20px;
+}
+
+.op-property-search .search-fields-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+}
+
+.op-property-search .search-field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+}
+
+.op-property-search label {
+    color: #ffffff !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px !important;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1;
+}
+
+.op-property-search label svg {
+    stroke: #ffffff !important;
+    width: 18px;
+    height: 18px;
+    opacity: 0.9;
+}
+
+.op-property-search .search-input {
+    height: 56px !important;
+    border-radius: 8px !important;
+    border: 1px solid transparent !important;
+    padding: 0 20px !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #B5B3C5 !important;
+    background-color: #ffffff !important;
+    width: 100% !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.op-property-search .search-input:focus {
+    border-color: #0062E6 !important;
+    box-shadow: 0 0 0 3px rgba(0, 98, 230, 0.2) !important;
+    outline: none !important;
+}
+
+.search-field-submit {
+    flex: 1;
+    min-width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.op-property-search .btn-search {
+    height: 56px !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    background-color: #0062E6 !important;
+    color: #ffffff !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 1.3 !important;
+    border: none !important;
+    border-radius: 50px !important;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase !important;
+    letter-spacing: 1px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top: 25px !important;
+    margin-left: 0 !important;
+    margin-right: auto !important;
+    padding: 10px 20px !important;
+}
+
+.op-property-search .btn-search:hover {
+    background-color: #004bb3 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 98, 230, 0.4) !important;
+}
+
+.op-property-search .btn-search svg {
+    margin: 0 !important;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   RESPONSIVE BUSCADOR
+   ========================================= */
+
+/* Tablet - 1250px */
+@media (max-width: 1250px) {
+    .op-property-search {
+        padding: 30px 30px 30px 30px !important;
+    }
+
+    .op-property-search .search-fields-wrapper {
+        flex-wrap: wrap;
+    }
+
+    .op-property-search .search-field {
+        min-width: calc(50% - 10px);
+    }
+
+    .search-field-submit {
+        min-width: 100% !important;
+        margin-top: 10px;
+    }
+
+    .op-property-search .btn-search {
+        width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 20px !important;
+    }
+}
+
+/* Mobile - 767px */
+@media (max-width: 767px) {
+    .op-property-search {
+        padding: 50px 30px 40px 30px !important;
+        border-radius: 16px !important;
+    }
+
+    .op-property-search .property-search-form,
+    .op-property-search .search-fields-wrapper {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 25px !important;
+    }
+
+    .op-property-search .search-field {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .op-property-search label {
+        font-size: 14px !important;
+        margin-bottom: 14px !important;
+    }
+
+    .op-property-search .search-input {
+        height: 60px !important;
+        font-size: 16px !important;
+    }
+
+    .search-field-submit {
+        min-width: 100% !important;
+        margin-top: 15px;
+    }
+
+    .op-property-search .btn-search {
+        margin-top: 15px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 100% !important;
+        height: 60px !important;
+        font-size: 15px !important;
+        flex-direction: row !important;
+        gap: 10px !important;
+    }
+}
+
+/* =========================================
+   HEADER RESPONSIVE - MOBILE & TABLET
+   ========================================= */
+
+/* Mobile + Tablet: â‰¤ 1250px (Dropdown activado) */
+@media (max-width: 1250px) {
+
+    /* ====================================
+       DROPDOWN FULLSCREEN CON FONDO AZUL
+       ==================================== */
+
+    /* MenÃº dropdown ocupando toda la pantalla */
+    .elementor-element-de19016 .elementor-nav-menu--dropdown {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: #006AE4 !important;
+        z-index: 9998 !important;
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+    }
+
+    /* Mostrar el menÃº cuando estÃ© visible (Elementor controla esto con aria-hidden) */
+    .elementor-element-de19016 .elementor-nav-menu--dropdown[aria-hidden="false"] {
+        display: flex !important;
+    }
+
+    /* Lista de menÃº centrada */
+    .elementor-nav-menu--dropdown .elementor-nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 20px !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto !important;
+        padding: 0 !important;
+    }
+
+    /* Items del menÃº */
+    .elementor-nav-menu--dropdown .menu-item {
+        width: 100% !important;
+        text-align: center !important;
+        border: none !important;
+        padding: 0 !important;
+        margin-bottom: 16px !important;
+    }
+
+    /* ====================================
+       LINKS NORMALES (Apartamentos, El Pavilion, Nosotros)
+       ==================================== */
+
+    .elementor-nav-menu--dropdown .elementor-item {
+        color: #ffffff !important;
+        font-size: 20px !important;
+        font-weight: 500 !important;
+        text-align: center !important;
+        padding: 18px 28px !important;
+        border-radius: 8px !important;
+        transition: all 0.3s ease !important;
+        background: transparent !important;
+        width: 100% !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .elementor-nav-menu--dropdown .elementor-item:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+    }
+
+    /* ====================================
+       BOTONES (Contacto y Reservar Ahora)
+       ==================================== */
+
+    /* BotÃ³n Azul - Contacto */
+    .elementor-nav-menu--dropdown .boton-azul a {
+        background-color: #ffffff !important;
+        color: #006AE4 !important;
+        border: 2px solid #ffffff !important;
+        border-radius: 50px !important;
+        padding: 14px 32px !important;
+        font-weight: 600 !important;
+        margin-top: 16px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 280px !important;
+        width: auto !important;
+        display: inline-flex !important;
+    }
+
+    .elementor-nav-menu--dropdown .boton-azul a:hover {
+        background-color: transparent !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+    }
+
+    /* BotÃ³n Oscuro - Reservar Ahora */
+    .elementor-nav-menu--dropdown .boton-oscuro a {
+        background-color: #1B003C !important;
+        color: #ffffff !important;
+        border: 2px solid #1B003C !important;
+        border-radius: 50px !important;
+        padding: 14px 32px !important;
+        font-weight: 600 !important;
+        margin-top: 16px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 280px !important;
+        width: auto !important;
+        display: inline-flex !important;
+    }
+
+    .elementor-nav-menu--dropdown .boton-oscuro a:hover {
+        background-color: #2d0056 !important;
+        border-color: #2d0056 !important;
+        transform: translateY(-2px) !important;
+    }
+
+    /* ====================================
+       SELECTOR DE IDIOMA (Polylang)
+       ==================================== */
+
+    /* Item del selector de idioma */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item {
+        margin-top: 24px !important;
+        padding-top: 24px !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+        width: 100% !important;
+        max-width: 200px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* Link principal del selector (ESP) */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item>a {
+        color: #ffffff !important;
+        font-size: 16px !important;
+        padding: 12px 20px !important;
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        border-radius: 8px !important;
+        justify-content: center !important;
+    }
+
+    /* Texto "ESP" en blanco */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item>a span:not(.sub-arrow)::after {
+        color: #ffffff !important;
+    }
+
+    /* Flecha del selector en blanco */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-arrow svg {
+        fill: #ffffff !important;
+    }
+
+    /* Dropdown de idiomas (English) - Oculto por defecto */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-menu {
+        position: relative !important;
+        display: block !important;
+        width: 100% !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        border-radius: 8px !important;
+        margin-top: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        opacity: 0 !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Dropdown de idiomas VISIBLE cuando estÃ¡ abierto */
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-menu[aria-hidden="false"],
+    .elementor-nav-menu--dropdown .pll-parent-menu-item:hover .sub-menu {
+        max-height: 60px !important;
+        margin-top: 8px !important;
+        padding: 8px !important;
+        opacity: 1 !important;
+    }
+
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-menu a {
+        color: #ffffff !important;
+        font-size: 15px !important;
+        padding: 10px 16px !important;
+    }
+
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.2) !important;
+    }
+
+    .elementor-nav-menu--dropdown .pll-parent-menu-item .sub-menu a span {
+        color: #ffffff !important;
+    }
+
+    /* ====================================
+       HAMBURGER TOGGLE
+       ==================================== */
+
+    /* Toggle button siempre visible encima del dropdown */
+    .elementor-element-de19016 .elementor-menu-toggle {
+        position: fixed !important;
+        top: 45px !important;
+        right: 60px !important;
+        z-index: 10000 !important;
+        width: 50px !important;
+        height: 50px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background-color: transparent !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 0 !important;
+    }
+
+    /* Icono del hamburger */
+    .elementor-element-de19016 .elementor-menu-toggle svg {
+        width: 40px !important;
+        height: 40px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Color del icono cuando el menÃº estÃ¡ cerrado (sobre fondo blanco del header) */
+    .elementor-element-de19016 .elementor-menu-toggle[aria-expanded="false"] svg {
+        fill: #006AE4 !important;
+    }
+
+    /* Color del icono cuando el menÃº estÃ¡ abierto (sobre fondo azul del dropdown) */
+    .elementor-element-de19016 .elementor-menu-toggle[aria-expanded="true"] svg {
+        fill: #ffffff !important;
+    }
+
+    /* ====================================
+       HEADER STICKY
+       ==================================== */
+
+    /* Ajustar header para que no interfiera con el dropdown */
+    .elementor-element-0c9087a.elementor-sticky--active {
+        z-index: 9997 !important;
+    }
+}
+
+/* ====================================
+   AJUSTES ESPECÃFICOS SOLO MÃ“VIL
+   ==================================== */
+
+@media (max-width: 767px) {
+
+    /* Padding mÃ¡s compacto en mÃ³vil */
+    .elementor-element-de19016 .elementor-nav-menu--dropdown {
+        padding-top: 90px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    /* Links un poco mÃ¡s pequeÃ±os en mÃ³vil */
+    .elementor-nav-menu--dropdown .elementor-item {
+        font-size: 18px !important;
+        padding: 14px 20px !important;
+    }
+
+    /* Botones mÃ¡s compactos */
+    .elementor-nav-menu--dropdown .boton-azul a,
+    .elementor-nav-menu--dropdown .boton-oscuro a {
+        padding: 12px 28px !important;
+        font-size: 16px !important;
+    }
+
+    /* Toggle mÃ¡s cerca del borde en mÃ³vil */
+    .elementor-element-de19016 .elementor-menu-toggle {
+        right: 30px !important;
+        top: 40px !important;
+    }
+}
+
+/* =========================================
+   BARRA LATERAL (SIDEBAR V4 - Compacto)
+   ========================================= */
+.op-sidebar-filters-container {
+    background: #ffffff !important;
+    border: 1px solid #EAEAEA !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Cabecera */
+.op-sidebar-filters-container .filter-header {
+    background-color: #ffffff !important;
+    padding: 20px 25px !important;
+    border-bottom: 1px solid #EAEAEA !important;
+}
+
+.op-sidebar-filters-container .filter-header h3 {
+    color: #0062E6 !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+}
+
+/* Secciones Principales */
+.filter-section {
+    padding: 20px 25px !important;
+    border-bottom: 1px solid #EAEAEA !important;
+}
+
+.filter-section h4 {
+    color: #100026 !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    margin-bottom: 15px !important;
+    margin-top: 0 !important;
+}
+
+/* Grupos (SubcategorÃ­as) */
+.filter-group {
+    margin-bottom: 12px !important;
+    border: none !important;
+}
+
+.filter-group:last-child {
+    margin-bottom: 0 !important;
+    border-bottom: none;
+}
+
+.filter-group label {
+    display: block;
+    color: #333 !important;
+    font-family: 'Alexandria', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin-bottom: 5px !important;
+}
+
+.filter-group h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-align: left !important;
+}
+
+/* Selects */
+.filter-select {
+    width: 100% !important;
+    height: 42px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E0E0E0 !important;
+    border-radius: 6px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    color: #555 !important;
+    font-family: 'Alexandria', sans-serif !important;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 9px !important;
+}
+
+/* Checkboxes (Amenidades) */
+.amenities-checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: #FAFAFA;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #F0F0F0;
+}
+
+.amenity-item label {
+    display: flex !important;
+    align-items: center !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    margin: 0 !important;
+    cursor: pointer;
+    text-align: left;
+}
+
+.amenity-item input[type="checkbox"] {
+    margin-right: 8px !important;
+    width: 16px !important;
+    height: 16px !important;
+    cursor: pointer;
+}
+
+/* Botones Pie */
+.filter-actions {
+    padding: 20px 25px !important;
+    background: #FAFAFA !important;
+    border-top: 1px solid #EAEAEA !important;
+}
+
+.btn-filter-apply {
+    width: 100% !important;
+    height: 46px !important;
+    background-color: #0062E6 !important;
+    color: white !important;
+    font-weight: 700 !important;
+    border-radius: 23px !important;
+    border: none !important;
+    cursor: pointer;
+    font-family: 'Alexandria', sans-serif !important;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    transition: background 0.3s;
+}
+
+.btn-filter-apply:hover {
+    background-color: #004bb3 !important;
+}
+
+.btn-filter-reset {
+    display: block;
+    text-align: center;
+    margin-top: 12px !important;
+    color: #888 !important;
+    font-size: 12px !important;
+    text-decoration: underline !important;
+    font-family: 'Alexandria', sans-serif !important;
+}
+
+/* =========================================
+   SIDEBAR FILTERS (Sticky)
+   ========================================= */
+.op-property-filters {
+    background: var(--op-white);
+    padding: var(--op-spacing-lg);
+    border-radius: var(--op-radius-md);
+    box-shadow: var(--op-shadow-sm);
+    position: sticky;
+    top: 100px;
+}
+
+.op-sidebar-filters-container h3,
+.op-sidebar-filters-container h4,
+.op-sidebar-filters-container .filter-header h3,
+.op-sidebar-filters-container .filter-section h4 {
+    text-align: left !important;
+}
+
+.filter-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-group label:hover {
+    color: var(--op-primary);
+}
+
+.filter-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+/* --- Responsive para Tablet (Break en 1200px) --- */
+@media (max-width: 1200px) {
+
+    /* 1. Ajuste de Espacios (Padding) en Cabecera, Cuerpo y Pie */
+    .filter-section,
+    .op-sidebar-filters-container .filter-header,
+    .filter-actions {
+        padding: 15px 10px !important;
+    }
+
+    /* 2. TÃ­tulo Principal (Fondo Azul) */
+    .op-sidebar-filters-container .filter-header h3 {
+        font-size: 13px !important;
+        /* Bajamos de 18px a 13px */
+    }
+
+    /* 3. TÃ­tulos de SecciÃ³n (Lo que pediste) */
+    .filter-section h4 {
+        font-size: 14px !important;
+        margin-bottom: 8px !important;
+    }
+
+    /* 4. Etiquetas normales (Labels de Selects) */
+    .filter-group label {
+        font-size: 14px !important;
+        /* Igualamos a tus amenities */
+    }
+
+    /* 5. Selectores / Desplegables (Para que no se vean gigantes) */
+    .filter-select {
+        height: 34px !important;
+        /* Bajamos altura de 42px */
+        font-size: 11px !important;
+        padding: 0 8px !important;
+    }
+
+    /* 6. Checkboxes (Amenidades - Lo que ya tenÃ­as) */
+    .amenity-item label {
+        font-size: 14px !important;
+        gap: 5px;
+        /* Ajuste fino del espacio icono-texto */
+    }
+
+    /* 7. BotÃ³n Aplicar (Pie del sidebar) */
+    .btn-filter-apply {
+        height: 36px !important;
+        /* MÃ¡s delgado */
+        font-size: 11px !important;
+    }
+
+    .btn-filter-reset {
+        font-size: 14px !important;
+    }
+
+    /* 8. Tu cÃ³digo de Metadatos (Shortcodes/Propiedades) */
+    .ocean-property-meta,
+    .elementor-widget-shortcode .elementor-shortcode:not(.op-sidebar-filters-container *) {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* =========================================
+   MOBILE/TABLET TYPOGRAPHY ADJUSTMENTS
+   ========================================= */
+@media (max-width: 1200px) {
+
+
+    .op-sidebar-filters-container .filter-header h3 {
+        font-size: 16px !important;
+    }
+
+    .filter-section h4 {
+        font-size: 16px !important;
+    }
+
+    .filter-group label {
+        font-size: 14px !important;
+    }
+
+    .filter-select {
+        font-size: 14px !important;
+    }
+
+    .amenity-item label {
+        font-size: 14px !important;
+    }
+
+    .btn-filter-apply {
+        font-size: 14px !important;
+    }
+
+    .btn-filter-reset {
+        font-size: 14px !important;
+    }
+}
+
+/* =========================================
+   SIDEBAR FILTERS RESPONSIVE & MODAL
+   ========================================= */
+
+/* 1. Visibilidad por Dispositivo */
+
+/* Desktop: Ocultar elementos mÃ³viles */
+@media (min-width: 1201px) {
+
+    .op-sidebar-mobile,
+    .op-filters-trigger-btn,
+    .op-filters-modal-wrapper {
+        display: none !important;
+    }
+
+    .op-sidebar-desktop {
+        display: block !important;
+    }
+}
+
+/* Mobile/Tablet: Ocultar sidebar desktop y mostrar botÃ³n */
+@media (max-width: 1200px) {
+    .op-sidebar-desktop {
+        display: none !important;
+    }
+
+    .op-filters-trigger-btn {
+        display: flex !important;
+    }
+}
+
+/* 2. BotÃ³n Trigger Flotante (Mobile) */
+.op-filters-trigger-btn {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9990;
+    background-color: #0062E6;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(0, 98, 230, 0.4);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.op-filters-trigger-btn:hover {
+    background-color: #004bb3;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 98, 230, 0.5);
+}
+
+.op-filters-trigger-btn::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='4' y1='21' x2='4' y2='14'%3E%3C/line%3E%3Cline x1='4' y1='10' x2='4' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='12'%3E%3C/line%3E%3Cline x1='12' y1='8' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='20' y1='21' x2='20' y2='16'%3E%3C/line%3E%3Cline x1='20' y1='12' x2='20' y2='3'%3E%3C/line%3E%3Cline x1='1' y1='14' x2='7' y2='14'%3E%3C/line%3E%3Cline x1='9' y1='8' x2='15' y2='8'%3E%3C/line%3E%3Cline x1='17' y1='16' x2='23' y2='16'%3E%3C/line%3E%3C/svg%3E");
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+/* 3. Modal Wrapper (Overlay) */
+.op-filters-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9000;
+    /* Debajo del Header (usualmente 9999) */
+    display: none;
+    /* JS lo cambia a flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    /* Slide up desde abajo */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+    padding-top: 100px;
+    /* Espacio para el header si fuera necesario */
+}
+
+.op-filters-modal-wrapper.active {
+    display: flex !important;
+    opacity: 1;
+}
+
+/* 4. Modal Content Container */
+/* 4. Modal Content Container */
+/* 4. Modal Content Container */
+.op-filters-modal-content {
+    background-color: #ffffff !important;
+    /* Fondo blanco para todo el contenedor */
+    width: 100%;
+    max-width: 100% !important;
+    /* Full width */
+    height: calc(100vh - 100px);
+    /* Ajustado para subir un poco mÃ¡s si es necesario */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 0 !important;
+    /* Sin padding lateral */
+    margin-bottom: 0 !important;
+    /* Pegado al fondo */
+    box-shadow: none !important;
+    /* Eliminar sombra que pueda parecer una lÃ­nea */
+    border: none !important;
+}
+
+.op-filters-modal-wrapper.active .op-filters-modal-content {
+    transform: translateY(0);
+}
+
+/* BotÃ³n Cerrar Modal (Texto Izquierda) */
+.op-modal-close {
+    position: static;
+    /* Ya no absoluto */
+    background: transparent;
+    border: none;
+    color: #858399 !important;
+    /* Nuevo color de texto solicitado */
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    font-size: 16px;
+    font-family: 'Alexandria', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    /* Alineado a la izquierda */
+    box-shadow: none;
+    padding: 10px 20px !important;
+    /* 20px padding lateral */
+    margin-bottom: 0;
+    /* Eliminar margen inferior para pegar al borde */
+}
+
+.op-modal-close:hover {
+    color: #ddd;
+}
+
+/* Contenedor del Sidebar dentro del Modal (La caja blanca) */
+.op-sidebar-mobile {
+    background: #ffffff;
+    border: none !important;
+    border-top: 1px solid #B0B8C7 !important;
+    /* Solo borde superior */
+    border-radius: 0 !important;
+    /* Sin bordes redondeados si es full width */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ocupar toda la altura del contenedor padre */
+    box-shadow: none !important;
+}
+
+.op-sidebar-mobile .op-sidebar-form {
+    overflow-y: auto;
+    flex: 1;
+    padding: 0 20px;
+    /* 20px padding lateral para los filtros */
+}
+
+/* Ajuste del botÃ³n aplicar en mÃ³vil */
+.op-sidebar-mobile .filter-actions {
+    position: sticky;
+    bottom: 0;
+    background: #ffffff !important;
+    border-top: none !important;
+    /* Integrado, sin borde superior */
+    padding: 20px 25px !important;
+    z-index: 10;
+}
+
+/* Bloquear scroll del body cuando modal estÃ¡ abierto */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Ocultar botÃ³n trigger cuando el modal estÃ¡ abierto */
+body.modal-open .op-filters-trigger-btn {
+    display: none !important;
+}Ä˜
+Ä˜Æ˜Æ˜íÏ íÏïÏ ïÏ²Ğ 
+²Ğ³Ğ³Ğ÷Ğ 
+÷ĞøĞøĞ·Ñ 
+·Ñ¸Ñ¸ÑüÑ 
+üÑıÑıÑ¿Ò 
+¿ÒÀÒÀÒ™Ó ™ÓÛå *cascade08ÛåÜå*cascade08Üååå *cascade08åå“æ*cascade08“æÄæ *cascade08Äæàæ*cascade08àæëæ *cascade08ëæˆç*cascade08ˆç€è *cascade08€èè*cascade08è†è *cascade08†èÒè*cascade08Òè½é *cascade08½éÇé*cascade08ÇéÊé *cascade08Êéëé*cascade08ëéŒê*cascade08Œê¾ê *cascade08
+¾êËêËêÌê *cascade08ÌêÍê*cascade08ÍêĞê *cascade08ĞêÖê *cascade08ÖêÙê *cascade08
+ÙêÚêÚêßê *cascade08
+ßêáêáêãê *cascade08
+ãêæêæêéê *cascade08
+éêğêğêñê *cascade08
+ñêõêõêøê *cascade08
+øêıêıê…ë *cascade08…ë¡ë *cascade08¡ë¢ë*cascade08¢ë¤ë *cascade08
+¤ë©ë©ëªë *cascade08ªë°ë*cascade08°ë²ë *cascade08
+²ëÇëÇëËë *cascade08ËëÌë*cascade08ÌëÍë *cascade08ÍëĞë*cascade08ĞëÑë *cascade08ÑëÒë*cascade08ÒëÓë *cascade08ÓëÔë*cascade08ÔëÕë*cascade08Õëáë *cascade08áëâë*cascade08âëïë *cascade08
+ïëñëñëòë *cascade08
+òëôëôëõë *cascade08õë÷ë*cascade08÷ëøë *cascade08
+øëüëüëıë *cascade08ıëşë *cascade08
+şë†ì†ì‡ì *cascade08‡ìˆì*cascade08ˆìŠì *cascade08Šì‹ì *cascade08
+‹ìììì *cascade08ì‘ì*cascade08‘ì’ì *cascade08’ì“ì *cascade08“ì–ì *cascade08–ì—ì*cascade08—ì˜ì *cascade08˜ì™ì*cascade08™ìšì *cascade08šì›ì*cascade08›ìì *cascade08ìŸì*cascade08Ÿì ì *cascade08 ì¢ì*cascade08¢ì§ì *cascade08§ì©ì*cascade08©ìªì *cascade08ªì«ì*cascade08«ì­ì *cascade08­ì¯ì*cascade08¯ì°ì *cascade08°ì±ì*cascade08±ìºì *cascade08ºì¿ì*cascade08¿ìÀì *cascade08ÀìÅì*cascade08ÅìÆì *cascade08ÆìÇì*cascade08ÇìÊì *cascade08ÊìĞì*cascade08ĞìÍí *cascade08ÍíĞí*cascade08ĞíÒí *cascade08ÒíÔí*cascade08ÔíÖí *cascade08ÖíØí *cascade08ØíÛí*cascade08ÛíÜí *cascade08Üíâí*cascade08âíèí *cascade08èíëí *cascade08
+ëíğíğíñí *cascade08
+ñíôíôíõí *cascade08õíöí*cascade08öíøí *cascade08øíî*cascade08î†î *cascade08†îî*cascade08îî *cascade08î‘î*cascade08‘î’î *cascade08’î“î*cascade08“î–î *cascade08–îšî*cascade08šî›î *cascade08›î¡î*cascade08¡î£î*cascade08£î¤î *cascade08¤î©î*cascade08©îªî *cascade08
+ªî±î±î²î *cascade08²î³î*cascade08³î´î *cascade08´îµî *cascade08
+µî¸î¸î¹î *cascade08¹îºî *cascade08ºî¼î*cascade08¼î½î *cascade08½î²ï*cascade08²ïªğ *cascade08ªğ¼ğ*cascade08¼ğáğ *cascade08áğåğ*cascade08åğëğ *cascade08ëğíğ*cascade08íğîğ *cascade08îğğğ*cascade08ğğñğ *cascade08ñğóğ*cascade08óğôğ *cascade08ôğúğ*cascade08úğûğ *cascade08ûğüğ*cascade08üğığ *cascade08ığÿğ*cascade08ÿğñ *cascade08ñ‘ñ*cascade08‘ñ’ñ *cascade08’ñ–ñ*cascade08–ñ—ñ *cascade08—ñ›ñ*cascade08›ñ»ñ *cascade08
+»ñÌñÌñÒñ *cascade08ÒñÕñ *cascade08
+Õñ×ñ×ñØñ *cascade08
+ØñÙñÙñİñ *cascade08İñŞñ*cascade08Şñáñ *cascade08áñâñ*cascade08âñäñ *cascade08äñåñ*cascade08åñæñ *cascade08
+æñéñéñêñ *cascade08êñëñ*cascade08ëñìñ *cascade08
+ìñîñîñïñ *cascade08
+ïñóñóñüñ *cascade08üñƒò *cascade08ƒò„ò*cascade08„ò…ò *cascade08…ò‡ò*cascade08‡ò•ò *cascade08•ò™ò*cascade08™òÀò *cascade08ÀòÂò*cascade08ÂòÊò *cascade08Êò‹ó*cascade08‹óİó *cascade08İóßó*cascade08ßóàó *cascade08àóóó*cascade08óóôó *cascade08ôóƒô*cascade08ƒô…ô *cascade08…ôŠô*cascade08Šô›ô *cascade08›ô¡ô*cascade08¡ô¢ô *cascade08¢ô¥ô*cascade08¥ô¦ô *cascade08¦ô­ô*cascade08­ô³ô *cascade08
+³ô´ô´ôµô *cascade08
+µô·ô·ôÂô*cascade08ÂôÄô *cascade08ÄôÜô Üôİô*cascade08İôŞô Şôßô*cascade08ßôãô ãôéô *cascade08éôëô *cascade08ëôîô*cascade08îôïô *cascade08ïô÷ô *cascade08
+÷ô™õ™õšõ *cascade08
+šõ¯õ¯õºõ *cascade08ºõ»õ *cascade08»õËõ*cascade08ËõÎõ *cascade08ÎõÚõ*cascade08Úõâõ *cascade08âõåõ*cascade08åõçõ *cascade08çõìõ*cascade08ìõíõ *cascade08íõïõ*cascade08ïõŠö *cascade08Šö›ö*cascade08›ö·ö *cascade08·ö»ö*cascade08»ö¼ö *cascade08¼öÁö*cascade08ÁöÃö *cascade08ÃöÊö*cascade08ÊöĞö *cascade08ĞöÑö*cascade08ÑöÒö *cascade08ÒöÔö*cascade08ÔöØö *cascade08
+Øöùöùöúö*cascade08úöûö *cascade08ûöşö*cascade08şöÿö *cascade08ÿö‚÷*cascade08‚÷ƒ÷ *cascade08ƒ÷‡÷*cascade08‡÷ˆ÷ *cascade08ˆ÷Š÷*cascade08Š÷÷ *cascade08
+÷¤÷¤÷¦÷ *cascade08¦÷¨÷*cascade08¨÷©÷ *cascade08©÷ª÷*cascade08
+ª÷®÷®÷¯÷ *cascade08¯÷°÷ *cascade08°÷±÷*cascade08±÷È÷ *cascade08È÷Ê÷ Ê÷Ö÷ *cascade08Ö÷ã÷ ã÷å÷*cascade08å÷í÷ í÷ï÷*cascade08ï÷ğ÷ ğ÷ò÷*cascade08ò÷ö÷ ö÷÷÷*cascade08÷÷ˆø ˆøø *cascade08øø*cascade08øø *cascade08ø™ø*cascade08™ø›ø *cascade08›ø¼ø*cascade08¼ø½ø *cascade08½øÃø*cascade08ÃøÅø *cascade08ÅøÆø*cascade08ÆøÇø *cascade08ÇøÊø*cascade08ÊøËø *cascade08ËøÒø *cascade08ÒøÓø *cascade08ÓøØø*cascade08ØøÙø *cascade08ÙøÛø*cascade08ÛøÜø *cascade08Üøİø*cascade08İøæø *cascade08æøèø*cascade08èøéø *cascade08éøëø*cascade08ëøìø *cascade08ìøğø*cascade08ğøòø *cascade08òøóø*cascade08óøõø*cascade08õøöø*cascade08öøùø*cascade08ùøûø *cascade08ûøüø *cascade08üø€ù*cascade08€ù‚ù *cascade08‚ù„ù *cascade08„ù†ù *cascade08†ùˆù*cascade08ˆù‰ù *cascade08‰ùù*cascade08ù“ù *cascade08“ù¤ù *cascade08¤ù¨ù*cascade08¨ù©ù *cascade08©ù¬ù*cascade08¬ù­ù *cascade08­ù®ù*cascade08®ù¯ù *cascade08¯ù°ù*cascade08°ù±ù *cascade08±ù³ù*cascade08³ù¹ù *cascade08¹ùºù *cascade08ºùÉù*cascade08ÉùËù *cascade08ËùĞù*cascade08ĞùÑù *cascade08ÑùÚù*cascade08ÚùÛù *cascade08Ûùâù*cascade08âùãù *cascade08ãùåù*cascade08åùæù *cascade08æùîù*cascade08îùïù *cascade08ïùğù*cascade08ğùñù *cascade08ñùÿù *cascade08ÿù€ú *cascade08
+€úÅúÅúñû *cascade08ñûòû*cascade08òûóû *cascade08óûõû*cascade08õû†ü *cascade08†ü®ü*cascade08®ü·ü *cascade08·ü¹ü*cascade08¹üÄı *cascade08ÄıÊş*cascade082Ofile:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css

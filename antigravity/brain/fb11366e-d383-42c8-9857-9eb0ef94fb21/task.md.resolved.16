@@ -1,0 +1,37 @@
+# Task List: Fix op_sidebar_filters Mobile Modal
+
+- [x] Analyze existing code for `[op_sidebar_filters]` <!-- id: 0 -->
+    - [x] Locate shortcode registration <!-- id: 1 -->
+    - [x] Identify mobile vs desktop filter implementation <!-- id: 2 -->
+    - [x] Check for duplicate IDs or conflicting scripts <!-- id: 3 -->
+- [x] Propose fix for production issue <!-- id: 4 -->
+- [x] Implement fix (JS/PHP) <!-- id: 5 -->
+- [x] Verify fix locally (JS/PHP) <!-- id: 6 -->
+- [x] Implement CSS fixes <!-- id: 7 -->
+    - [x] Add visibility toggles <!-- id: 8 -->
+    - [x] Style mobile trigger button <!-- id: 9 -->
+    - [x] Style modal components <!-- id: 10 -->
+- [x] Verify CSS fixes <!-- id: 11 -->
+- [x] Refine Mobile Modal Design <!-- id: 12 -->
+    - [x] Adjust z-index for header visibility <!-- id: 13 -->
+    - [x] Re-style close button (left aligned, text only) <!-- id: 14 -->
+    - [x] Apply border and styling to filter container <!-- id: 15 -->
+- [x] Verify Design Refinements <!-- id: 16 -->
+- [x] Finalize Mobile Design <!-- id: 17 -->
+    - [x] Hide trigger button when modal is open <!-- id: 18 -->
+    - [x] Style filter actions (white background, integrated) <!-- id: 19 -->
+    - [x] Ensure full height layout <!-- id: 20 -->
+- [x] Verify Final Design <!-- id: 21 -->
+- [x] Refine to Full Width <!-- id: 22 -->
+    - [x] Remove side padding from modal content <!-- id: 23 -->
+    - [x] Adjust borders for full width (top only) <!-- id: 24 -->
+    - [x] Ensure white background fills width <!-- id: 25 -->
+- [x] Verify Full Width Design <!-- id: 26 -->
+- [x] Final Polish <!-- id: 27 -->
+    - [x] Set modal content background to white <!-- id: 28 -->
+    - [x] Change close button text color to #858399 <!-- id: 29 -->
+- [x] Verify Final Polish <!-- id: 30 -->
+- [/] Alignment and Cleanup <!-- id: 31 -->
+    - [ ] Remove top gray line (shadow/border) <!-- id: 32 -->
+    - [ ] Align close button and filters (20px side padding) <!-- id: 33 -->
+- [ ] Verify Alignment <!-- id: 34 -->

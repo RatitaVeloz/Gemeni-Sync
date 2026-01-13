@@ -1,0 +1,42 @@
+# Finalize Mobile Modal Design
+
+The user wants to:
+1.  Hide the "Filtrar por" trigger button when the modal is open.
+2.  Make the "Aplicar Filtros" section white (remove gray background) and integrated with the rest of the card.
+3.  Ensure the modal occupies the full screen (minus header).
+
+## User Review Required
+> [!NOTE]
+> I will use the `body.modal-open` class to hide the trigger button.
+
+## Proposed Changes
+
+### Theme: hello-elementor-child
+
+#### [MODIFY] [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css)
+Update/Add the following CSS rules:
+
+1.  **Hide Trigger on Modal Open**:
+    ```css
+    body.modal-open .op-filters-trigger-btn {
+        display: none !important;
+    }
+    ```
+
+2.  **Filter Actions Styling**:
+    *   Update `.op-sidebar-mobile .filter-actions`:
+        *   `background: #ffffff !important`.
+        *   `border-top: none !important` (or keep subtle if needed, user said "integrated").
+        *   `padding: 20px 25px !important`.
+
+3.  **Full Height Layout**:
+    *   `.op-filters-modal-content`: `height: calc(100vh - 120px)` (approx header height + spacing).
+    *   `.op-sidebar-mobile`: `height: 100%`.
+
+## Verification Plan
+
+### Manual Verification
+1.  **Mobile**: Open modal.
+2.  **Trigger Button**: Verify it disappears.
+3.  **Filter Actions**: Verify the background is white and looks integrated.
+4.  **Layout**: Verify the modal takes up the available space below the header.

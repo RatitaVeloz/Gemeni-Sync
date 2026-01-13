@@ -1,0 +1,9 @@
+# Task List: Fix op_sidebar_filters Mobile Modal
+
+- [ ] Analyze existing code for `[op_sidebar_filters]` <!-- id: 0 -->
+    - [ ] Locate shortcode registration <!-- id: 1 -->
+    - [ ] Identify mobile vs desktop filter implementation <!-- id: 2 -->
+    - [ ] Check for duplicate IDs or conflicting scripts <!-- id: 3 -->
+- [ ] Propose fix for production issue <!-- id: 4 -->
+- [ ] Implement fix <!-- id: 5 -->
+- [ ] Verify fix locally <!-- id: 6 -->

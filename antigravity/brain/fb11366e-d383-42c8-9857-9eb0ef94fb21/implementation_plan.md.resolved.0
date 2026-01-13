@@ -1,0 +1,35 @@
+# Fix Mobile Modal Filters (Duplicate IDs)
+
+The issue is caused by duplicate HTML IDs (`ocean-price-slider`, `price-display-values`, etc.) being rendered twice: once for the desktop sidebar and once for the mobile modal. The JavaScript currently only targets the first instance (desktop), leaving the mobile slider non-functional.
+
+## User Review Required
+> [!NOTE]
+> This change modifies the HTML structure to use classes instead of IDs for the price slider components. If there is any custom CSS targeting these specific IDs (e.g., `#ocean-price-slider`), it might need to be updated. I will check for this, but please be aware.
+
+## Proposed Changes
+
+### Theme: hello-elementor-child
+
+#### [MODIFY] [shortcodes-filters.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php)
+- Change `id="ocean-price-slider"` to `class="ocean-price-slider"` (and keep the ID if needed for CSS, but make it unique, or just rely on class). *Decision: Use class for JS targeting. Remove ID to avoid invalid HTML.*
+- Change `id="price-display-values"` to `class="price-display-values"`.
+- Change `id="input-price-min"` to `class="input-price-min"`.
+- Change `id="input-price-max"` to `class="input-price-max"`.
+
+#### [MODIFY] [price-slider.js](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/assets/js/price-slider.js)
+- Update selector to `document.querySelectorAll('.ocean-price-slider')`.
+- Iterate over each found slider element.
+- Scope the search for related inputs (`min`, `max`, `display`) to the parent container of the current slider, ensuring the mobile slider controls the mobile inputs and the desktop slider controls the desktop inputs.
+
+## Verification Plan
+
+### Manual Verification
+1.  **Desktop View**:
+    *   Load the page with filters.
+    *   Verify the sidebar price slider works and updates the URL on apply.
+2.  **Mobile View**:
+    *   Resize browser or use DevTools mobile mode.
+    *   Open the "Filtrar por" modal.
+    *   Verify the price slider is visible and interactive.
+    *   Move the slider and verify the text values update.
+    *   Apply filters and verify the URL parameters are correct.

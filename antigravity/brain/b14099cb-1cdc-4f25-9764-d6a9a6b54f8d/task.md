@@ -1,0 +1,12 @@
+# Synchronization of Gemini Conversations
+
+- [x] Check `.gemini` directory structure and size <!-- id: 0 -->
+- [x] Configure Git (Found global config: Gaston <tangaston@gmail.com>) <!-- id: 1 -->
+- [/] Initialize Git repository in `.gemini` <!-- id: 2 -->
+    - [x] Create `.gitignore` to exclude unnecessary files <!-- id: 3 -->
+    - [x] Run git init
+    - [ ] Stage and Commit files
+- [ ] Guide user to create a remote repository (GitHub/GitLab) <!-- id: 4 -->
+- [ ] Connect local repo to remote <!-- id: 5 -->
+- [ ] Push initial data <!-- id: 6 -->
+- [ ] Provide instructions for the second machine (notebook) <!-- id: 7 -->

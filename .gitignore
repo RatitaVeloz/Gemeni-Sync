@@ -1,0 +1,12 @@
+# Security: Exclude credentials
+oauth_creds.json
+google_accounts.json
+installation_id
+
+# System: Exclude temporary files
+tmp/
+*.log
+
+# OS specific
+Thumbs.db
+Desktop.ini
