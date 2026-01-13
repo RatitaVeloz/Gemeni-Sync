@@ -1,0 +1,13 @@
+# Tarea: Hacer responsive el buscador de propiedades
+
+## Checklist
+
+- [ ] Revisar diseño objetivo (imagen 1 - móvil)
+- [ ] Revisar diseño actual (imagen 2 - desktop)
+- [ ] Identificar diferencias en padding, espaciado y layout del botón
+- [ ] Ajustar CSS responsive para móvil (767px)
+- [ ] Ajustar CSS responsive para tablet (1150px)
+- [ ] Asegurar que el botón "Buscar Apartamentos" se adapte correctamente
+  - [ ] Texto en 2 líneas en móvil
+  - [ ] Lupa centrada entre las líneas
+  - [ ] Padding adecuado arriba y abajo

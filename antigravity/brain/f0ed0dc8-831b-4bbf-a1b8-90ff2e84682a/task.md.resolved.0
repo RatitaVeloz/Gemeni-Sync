@@ -1,0 +1,27 @@
+# Mobile Filter Modal Implementation
+
+## Planning
+- [ ] Review current sidebar structure and CSS
+- [ ] Create implementation plan document
+
+## Implementation
+- [ ] Modify PHP shortcode to add modal structure
+  - [ ] Add mobile trigger button "Filtrar por:"
+  - [ ] Wrap existing form in modal container
+  - [ ] Add close button "X Cerrar"
+- [ ] Add CSS styles for mobile modal
+  - [ ] Modal overlay and container styles
+  - [ ] Trigger button styles
+  - [ ] Close button styles
+  - [ ] Responsive behavior (≤767px)
+- [ ] Add JavaScript for modal functionality
+  - [ ] Open modal on trigger click
+  - [ ] Close modal on X button click
+  - [ ] Close modal on overlay click
+  - [ ] Prevent body scroll when modal open
+
+## Verification
+- [ ] Test modal opens/closes correctly
+- [ ] Verify responsive breakpoint at 767px
+- [ ] Ensure form functionality remains intact
+- [ ] Check desktop view unchanged

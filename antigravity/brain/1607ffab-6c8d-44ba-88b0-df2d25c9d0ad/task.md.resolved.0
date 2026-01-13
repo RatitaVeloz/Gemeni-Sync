@@ -1,0 +1,8 @@
+# Task: Set up Git Synchronization for Antigravity
+
+- [ ] Check Git installation status <!-- id: 0 -->
+- [ ] Install Git (if missing) <!-- id: 1 -->
+- [ ] Configure Git identity (user/email) <!-- id: 2 -->
+- [ ] Initialize Git repository in `C:\Users\tanga\.gemini` <!-- id: 3 -->
+- [ ] Create .gitignore to exclude unnecessary files <!-- id: 4 -->
+- [ ] Create synchronization workflow documentation <!-- id: 5 -->

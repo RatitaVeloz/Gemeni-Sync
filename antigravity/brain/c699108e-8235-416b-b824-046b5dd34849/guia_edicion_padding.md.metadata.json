@@ -1,0 +1,5 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_OTHER",
+  "summary":  "Guía de referencia rápida para editar el padding de los links del menú móvil. Documenta las ubicaciones exactas en el archivo style.css donde se pueden ajustar: padding de links normales (línea 1215), margin entre items (línea 1206), padding de botones Contacto y Reservar (líneas 1242 y 1259), y padding de selector de idioma (línea 1288). Incluye valores actuales y ejemplos de cómo modificarlos.",
+  "updatedAt":  "2026-01-12T00:39:48.536871300Z"
+}
