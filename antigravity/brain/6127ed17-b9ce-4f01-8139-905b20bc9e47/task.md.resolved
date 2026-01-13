@@ -1,5 +1,6 @@
 # Sincronización de Conversaciones Gemini
 
 - [x] Verificar estado de Git en Notebook <!-- id: 0 -->
-- [ ] Crear guía de flujo de trabajo diario (Git Daily Workflow) <!-- id: 2 -->
+- [x] Crear guía de flujo de trabajo diario (Git Daily Workflow) <!-- id: 2 -->
+- [x] Configurar Identidad de Git (Nombre y Email) <!-- id: 3 -->
 - [ ] Crear guía de configuración inicial para Desktop <!-- id: 1 -->
