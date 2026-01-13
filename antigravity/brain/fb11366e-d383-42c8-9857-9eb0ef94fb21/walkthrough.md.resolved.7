@@ -5,7 +5,7 @@ I have fixed the issue where the mobile filter modal was not working correctly d
 ## Changes Made
 
 ### 1. Replaced IDs with Classes in PHP
-In `inc/shortcodes-filters.php`, I replaced the unique IDs with classes to allow the filter form to be rendered twice (once for desktop, once for mobile) without invalidating the HTML or confusing the JavaScript.
+In [inc/shortcodes-filters.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php), I replaced the unique IDs with classes to allow the filter form to be rendered twice (once for desktop, once for mobile) without invalidating the HTML or confusing the JavaScript.
 
 ```diff
 - <div id="ocean-price-slider" ...></div>
@@ -13,7 +13,7 @@ In `inc/shortcodes-filters.php`, I replaced the unique IDs with classes to allow
 ```
 
 ### 2. Updated JavaScript for Multiple Instances
-In `assets/js/price-slider.js`, I updated the script to find all instances of `.ocean-price-slider` and initialize them independently. I also scoped the search for related inputs (min/max price) to the specific container of each slider, ensuring that moving the mobile slider updates the mobile inputs, and vice-versa.
+In [assets/js/price-slider.js](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/assets/js/price-slider.js), I updated the script to find all instances of `.ocean-price-slider` and initialize them independently. I also scoped the search for related inputs (min/max price) to the specific container of each slider, ensuring that moving the mobile slider updates the mobile inputs, and vice-versa.
 
 ```javascript
 const sliders = document.querySelectorAll('.ocean-price-slider');
@@ -36,7 +36,7 @@ sliders.forEach(function (slider) {
 3.  **Mobile**: Open the "Filtrar por" modal and check that the price slider now appears and works.
 
 ### 3. Added CSS for Visibility and Styling
-In `style.css`, I added media queries and styles to:
+In [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css), I added media queries and styles to:
 *   **Toggle Visibility**: Show `.op-sidebar-desktop` only on screens > 1200px, and `.op-filters-trigger-btn` only on screens <= 1200px.
 *   **Style Mobile Button**: Created a fixed "Filtrar por" button at the bottom of the screen for mobile users.
 *   **Style Modal**: Implemented a slide-up modal with a semi-transparent overlay and a close button.
@@ -142,21 +142,4 @@ To prevent the price slider handles from being cut off at the edges, I increased
 ```
 
 ### Manual Verification Steps (Slider)
-### 10. Amenities Dropdown Styling
-I styled the "Amenidades" dropdown to match the other select inputs and updated the text:
-*   **Style**: Applied `.filter-select` styles to `.amenities-summary`, including the custom SVG arrow.
-*   **Text**: Changed "Seleccionar amenidades" to "Cualquiera" in `shortcodes-filters.php`.
-*   **Dropdown**: Adjusted `.amenities-checkboxes` to attach seamlessly to the summary when open.
-
-```css
-.amenities-summary {
-    /* Styles matching .filter-select */
-    background-image: url("data:image/svg+xml;...") !important;
-}
-.amenities-checkboxes { border-top: none; margin-top: -4px; border-radius: 0 0 6px 6px; }
-```
-
-### Manual Verification Steps (Amenities)
-1.  **Visual**: Verify the "Amenidades" dropdown looks identical to "Habitaciones" (same height, border, arrow).
-2.  **Text**: Verify it says "Cualquiera".
-3.  **Open**: Click to open and ensure the checkboxes appear in a box attached below the summary.
+1.  **Slider Handles**: Verify the blue slider handles are fully visible and not cut off by the screen edges.

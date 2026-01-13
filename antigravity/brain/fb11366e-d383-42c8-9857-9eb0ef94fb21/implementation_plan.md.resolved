@@ -1,31 +1,27 @@
-# Refine to Full Width Mobile Modal
+# Style Amenities Dropdown
 
-The user wants to remove the transparent margins around the modal, making it a full-width bottom sheet with a white background.
+The user wants the amenities dropdown to look like the standard select inputs used for other filters.
 
 ## User Review Required
 > [!NOTE]
-> I will remove the side borders and side padding. The modal will now span the full width of the screen.
+> I will change the text "Seleccionar amenidades" to "Cualquiera" to match the other filters as requested ("parece algo repetido").
 
 ## Proposed Changes
 
 ### Theme: hello-elementor-child
 
+#### [MODIFY] [inc/shortcodes-filters.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php)
+*   Change the summary text from `Seleccionar amenidades` to `Cualquiera`.
+
 #### [MODIFY] [style.css](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css)
-Update the following CSS rules:
-
-1.  **Modal Content (`.op-filters-modal-content`)**:
-    *   `padding: 0 !important`.
-    *   `margin-bottom: 0 !important`.
-    *   `max-width: 100% !important`.
-
-2.  **Sidebar Container (`.op-sidebar-mobile`)**:
-    *   `border-radius: 16px 16px 0 0 !important`.
-    *   `border: none !important`.
-    *   `border-top: 1px solid #B0B8C7 !important`.
+*   Style `.amenities-summary` to match `.filter-select`:
+    *   Border, radius, background, font size/color.
+    *   Add the dropdown arrow using `::after` or background image to mimic the select arrow.
+    *   Ensure the dropdown content (`.amenities-checkboxes`) is positioned correctly (it's inside a `<details>` tag, so standard behavior applies, but might need some padding/border tweaks).
 
 ## Verification Plan
 
 ### Manual Verification
-1.  **Mobile**: Open modal.
-2.  **Edges**: Verify the white background touches the left, right, and bottom edges of the screen.
-3.  **Border**: Verify there is only a top border and top rounded corners.
+1.  **Visual**: Check that the "Amenidades" dropdown looks identical to the "Habitaciones" or "Baños" dropdowns.
+2.  **Text**: Verify the label says "Amenidades" and the box says "Cualquiera".
+3.  **Interaction**: Click to open and verify the checkboxes appear correctly.

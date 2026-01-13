@@ -38,8 +38,8 @@
 - [x] Final Polish: Slider Padding <!-- id: 35 -->
     - [x] Increase side padding to 25px <!-- id: 36 -->
 - [x] Verify Slider Padding <!-- id: 37 -->
-- [x] Style Amenities Dropdown <!-- id: 38 -->
-    - [x] Change text to "Cualquiera" <!-- id: 39 -->
-    - [x] Apply filter-select styles to summary <!-- id: 40 -->
-    - [x] Add dropdown arrow <!-- id: 41 -->
-- [x] Verify Amenities Style <!-- id: 42 -->
+- [/] Style Amenities Dropdown <!-- id: 38 -->
+    - [ ] Change text to "Cualquiera" <!-- id: 39 -->
+    - [ ] Apply filter-select styles to summary <!-- id: 40 -->
+    - [ ] Add dropdown arrow <!-- id: 41 -->
+- [ ] Verify Amenities Style <!-- id: 42 -->

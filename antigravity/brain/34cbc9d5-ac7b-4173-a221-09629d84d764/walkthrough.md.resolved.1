@@ -1,0 +1,46 @@
+# Walkthrough - Responsive Reviews Grid
+
+Implemented responsive design updates for the `[ocean_reviews_grid_test]` shortcode to improve readability on smaller screens.
+
+## Changes
+
+Modified [inc/reviews-test.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/reviews-test.php) to include specific media queries.
+
+### Responsive Breakpoints
+
+| Breakpoint | Device Target | Font Size (Text) | Font Size (Author) | Card Padding | Navigation |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **> 1500px** | Default / Large | 20px | 20px | 40px | Side Arrows |
+| **1251px - 1500px** | Laptop | 18px | 20px | 35px | Side Arrows (adjusted) |
+| **768px - 1250px** | Tablet | 17px | 18px | 30px | Side Arrows (adjusted) |
+| **< 767px** | Mobile | 15px | 16px | 20px | **Bottom Arrows (Centered)** |
+
+### Code Updates
+
+Refactored the `<style>` block to organize breakpoints and override base styles appropriately.
+
+```css
+        /* Mobile (< 767px) */
+        @media (max-width: 767px) {
+             /* Stack columns, make space for arrows at bottom */
+            .ocean-reviews-slide { grid-template-columns: 1fr; }
+            .ocean-reviews-slider-wrapper { padding-bottom: 60px; }
+            
+            /* Position arrows at bottom center */
+            .ocean-reviews-arrow {
+                display: flex;
+                top: auto; bottom: 0;
+                transform: none;
+            }
+            .ocean-reviews-arrow.prev { left: calc(50% - 60px); }
+            .ocean-reviews-arrow.next { right: calc(50% - 60px); }
+        }
+```
+
+## Verification
+
+The styles are applied directly within the shortcode output, ensuring no caching issues with external CSS files for this specific component.
+User should verify on:
+1.  **Mobile**: Check that cards stack (1 column) and text is readable (15px). **Verify arrows appear at the bottom center.**
+2.  **Tablet**: Check 2 column grid with slightly smaller text (17px).
+3.  **Laptop**: Check transition at 1500px.

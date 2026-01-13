@@ -1,0 +1,42 @@
+# Walkthrough - Booking Widget Typography Updates
+
+Updated the `[ocean_dynamic_booking]` shortcode styles to reduce the overall typography size, making the widget more compact.
+
+## Changes
+
+Modified [inc/shortcodes-booking.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-booking.php).
+
+### Typography Updates
+
+| Element | Old Size | New Size | Notes |
+| :--- | :--- | :--- | :--- |
+| **Title** | 20px | **18px** | `.ocean-widget-title` |
+| **Labels** | 18px | **15px** | `.ocean-booking-widget label` |
+| **Inputs** | 16px | **14px** | `input`, `select` |
+| **Submit Button** | 16px | **15px** | `input[type="submit"]` |
+
+### CSS Changes
+
+```css
+        .ocean-widget-title {
+            font-size: 18px; /* Was 20px */
+            margin-bottom: 20px; /* Reduced from 25px */
+        }
+
+        .ocean-booking-widget label {
+            font-size: 15px !important; /* Was 18px */
+            margin-bottom: 6px !important; /* Reduced from 8px */
+        }
+
+        .ocean-booking-widget input, 
+        .ocean-booking-widget select {
+            font-size: 14px; /* Was 16px */
+            padding: 10px 12px !important; /* Slightly reduced padding */
+        }
+```
+
+## Verification
+User should check:
+1.  **Visual Balance**: Does the form look less overwhelming?
+2.  **Readability**: Is the text still legible on mobile and desktop?
+3.  **Layout**: Ensure fields still stack correctly and don't look too cramped.

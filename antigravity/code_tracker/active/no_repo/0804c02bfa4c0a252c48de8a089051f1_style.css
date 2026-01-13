@@ -1,4 +1,4 @@
-Êş/*
+·…/*
 Theme Name:   Hello Elementor Child - OP Realty Group
 Theme URI:    https://oprealty.com
 Description:  Child theme para OP Realty Group con integraciÃ³n completa de HBook motor de reservas
@@ -768,11 +768,9 @@ button.hb-search-submit:hover {
     height: 6px !important;
     border: none !important;
     background: #F2F4F8 !important;
-    /* Gris muy suave */
     border-radius: 3px !important;
     box-shadow: none !important;
-    margin-top: 10px !important;
-    margin-bottom: 20px !important;
+    margin: 10px 10px 20px 10px !important;
 }
 
 /* Connect (Barra rellena entre puntos) */
@@ -1526,15 +1524,44 @@ button.hb-search-submit:hover {
     background-size: 9px !important;
 }
 
+/* Summary (Amenidades Toggle) */
+.amenities-summary {
+    width: 100% !important;
+    height: 42px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #E0E0E0 !important;
+    border-radius: 6px !important;
+    padding: 0 12px !important;
+    font-size: 14px !important;
+    color: #555 !important;
+    font-family: 'Alexandria', sans-serif !important;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    /* Ocultar triÃ¡ngulo por defecto */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 12px center !important;
+    background-size: 9px !important;
+}
+
+.amenities-summary::-webkit-details-marker {
+    display: none;
+}
+
 /* Checkboxes (Amenidades) */
 .amenities-checkboxes {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    background: #FAFAFA;
+    background: #ffffff;
     padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #F0F0F0;
+    border-radius: 0 0 6px 6px;
+    border: 1px solid #E0E0E0;
+    border-top: none;
+    margin-top: -4px;
+    /* Pegarlo al summary */
 }
 
 .amenity-item label {
@@ -1563,7 +1590,7 @@ button.hb-search-submit:hover {
 
 .btn-filter-apply {
     width: 100% !important;
-    height: 46px !important;
+    height: 60px !important;
     background-color: #0062E6 !important;
     color: white !important;
     font-weight: 700 !important;
@@ -1673,8 +1700,7 @@ button.hb-search-submit:hover {
 
     /* 7. BotÃ³n Aplicar (Pie del sidebar) */
     .btn-filter-apply {
-        height: 36px !important;
-        /* MÃ¡s delgado */
+        height: 50px !important;
         font-size: 11px !important;
     }
 
@@ -1685,7 +1711,7 @@ button.hb-search-submit:hover {
     /* 8. Tu cÃ³digo de Metadatos (Shortcodes/Propiedades) */
     .ocean-property-meta,
     .elementor-widget-shortcode .elementor-shortcode:not(.op-sidebar-filters-container *) {
-        font-size: 14px !important;
+        font-size: 10px !important;
         line-height: 1.3 !important;
     }
 }
@@ -1829,7 +1855,7 @@ button.hb-search-submit:hover {
     width: 100%;
     max-width: 100% !important;
     /* Full width */
-    height: calc(100vh - 100px);
+    height: calc(100vh - 106px);
     /* Ajustado para subir un poco mÃ¡s si es necesario */
     display: flex;
     flex-direction: column;
@@ -1852,11 +1878,9 @@ button.hb-search-submit:hover {
 /* BotÃ³n Cerrar Modal (Texto Izquierda) */
 .op-modal-close {
     position: static;
-    /* Ya no absoluto */
     background: transparent;
     border: none;
     color: #858399 !important;
-    /* Nuevo color de texto solicitado */
     width: 100%;
     height: auto;
     border-radius: 0;
@@ -1867,12 +1891,9 @@ button.hb-search-submit:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    /* Alineado a la izquierda */
     box-shadow: none;
-    padding: 10px 20px !important;
-    /* 20px padding lateral */
+    padding: 10px 30px !important;
     margin-bottom: 0;
-    /* Eliminar margen inferior para pegar al borde */
 }
 
 .op-modal-close:hover {
@@ -1883,23 +1904,19 @@ button.hb-search-submit:hover {
 .op-sidebar-mobile {
     background: #ffffff;
     border: none !important;
-    border-top: 1px solid #B0B8C7 !important;
-    /* Solo borde superior */
     border-radius: 0 !important;
-    /* Sin bordes redondeados si es full width */
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* Ocupar toda la altura del contenedor padre */
     box-shadow: none !important;
 }
 
 .op-sidebar-mobile .op-sidebar-form {
     overflow-y: auto;
     flex: 1;
-    padding: 0 20px;
-    /* 20px padding lateral para los filtros */
+    padding: 0 25px;
+    /* Aumentado a 25px para que no se corte el slider */
 }
 
 /* Ajuste del botÃ³n aplicar en mÃ³vil */
@@ -1921,42 +1938,42 @@ body.modal-open {
 /* Ocultar botÃ³n trigger cuando el modal estÃ¡ abierto */
 body.modal-open .op-filters-trigger-btn {
     display: none !important;
-}Ä˜
-Ä˜Æ˜Æ˜íÏ íÏïÏ ïÏ²Ğ 
-²Ğ³Ğ³Ğ÷Ğ 
-÷ĞøĞøĞ·Ñ 
-·Ñ¸Ñ¸ÑüÑ 
-üÑıÑıÑ¿Ò 
-¿ÒÀÒÀÒ™Ó ™ÓÛå *cascade08ÛåÜå*cascade08Üååå *cascade08åå“æ*cascade08“æÄæ *cascade08Äæàæ*cascade08àæëæ *cascade08ëæˆç*cascade08ˆç€è *cascade08€èè*cascade08è†è *cascade08†èÒè*cascade08Òè½é *cascade08½éÇé*cascade08ÇéÊé *cascade08Êéëé*cascade08ëéŒê*cascade08Œê¾ê *cascade08
-¾êËêËêÌê *cascade08ÌêÍê*cascade08ÍêĞê *cascade08ĞêÖê *cascade08ÖêÙê *cascade08
-ÙêÚêÚêßê *cascade08
-ßêáêáêãê *cascade08
-ãêæêæêéê *cascade08
-éêğêğêñê *cascade08
-ñêõêõêøê *cascade08
-øêıêıê…ë *cascade08…ë¡ë *cascade08¡ë¢ë*cascade08¢ë¤ë *cascade08
-¤ë©ë©ëªë *cascade08ªë°ë*cascade08°ë²ë *cascade08
-²ëÇëÇëËë *cascade08ËëÌë*cascade08ÌëÍë *cascade08ÍëĞë*cascade08ĞëÑë *cascade08ÑëÒë*cascade08ÒëÓë *cascade08ÓëÔë*cascade08ÔëÕë*cascade08Õëáë *cascade08áëâë*cascade08âëïë *cascade08
-ïëñëñëòë *cascade08
-òëôëôëõë *cascade08õë÷ë*cascade08÷ëøë *cascade08
-øëüëüëıë *cascade08ıëşë *cascade08
-şë†ì†ì‡ì *cascade08‡ìˆì*cascade08ˆìŠì *cascade08Šì‹ì *cascade08
-‹ìììì *cascade08ì‘ì*cascade08‘ì’ì *cascade08’ì“ì *cascade08“ì–ì *cascade08–ì—ì*cascade08—ì˜ì *cascade08˜ì™ì*cascade08™ìšì *cascade08šì›ì*cascade08›ìì *cascade08ìŸì*cascade08Ÿì ì *cascade08 ì¢ì*cascade08¢ì§ì *cascade08§ì©ì*cascade08©ìªì *cascade08ªì«ì*cascade08«ì­ì *cascade08­ì¯ì*cascade08¯ì°ì *cascade08°ì±ì*cascade08±ìºì *cascade08ºì¿ì*cascade08¿ìÀì *cascade08ÀìÅì*cascade08ÅìÆì *cascade08ÆìÇì*cascade08ÇìÊì *cascade08ÊìĞì*cascade08ĞìÍí *cascade08ÍíĞí*cascade08ĞíÒí *cascade08ÒíÔí*cascade08ÔíÖí *cascade08ÖíØí *cascade08ØíÛí*cascade08ÛíÜí *cascade08Üíâí*cascade08âíèí *cascade08èíëí *cascade08
-ëíğíğíñí *cascade08
-ñíôíôíõí *cascade08õíöí*cascade08öíøí *cascade08øíî*cascade08î†î *cascade08†îî*cascade08îî *cascade08î‘î*cascade08‘î’î *cascade08’î“î*cascade08“î–î *cascade08–îšî*cascade08šî›î *cascade08›î¡î*cascade08¡î£î*cascade08£î¤î *cascade08¤î©î*cascade08©îªî *cascade08
-ªî±î±î²î *cascade08²î³î*cascade08³î´î *cascade08´îµî *cascade08
-µî¸î¸î¹î *cascade08¹îºî *cascade08ºî¼î*cascade08¼î½î *cascade08½î²ï*cascade08²ïªğ *cascade08ªğ¼ğ*cascade08¼ğáğ *cascade08áğåğ*cascade08åğëğ *cascade08ëğíğ*cascade08íğîğ *cascade08îğğğ*cascade08ğğñğ *cascade08ñğóğ*cascade08óğôğ *cascade08ôğúğ*cascade08úğûğ *cascade08ûğüğ*cascade08üğığ *cascade08ığÿğ*cascade08ÿğñ *cascade08ñ‘ñ*cascade08‘ñ’ñ *cascade08’ñ–ñ*cascade08–ñ—ñ *cascade08—ñ›ñ*cascade08›ñ»ñ *cascade08
-»ñÌñÌñÒñ *cascade08ÒñÕñ *cascade08
-Õñ×ñ×ñØñ *cascade08
-ØñÙñÙñİñ *cascade08İñŞñ*cascade08Şñáñ *cascade08áñâñ*cascade08âñäñ *cascade08äñåñ*cascade08åñæñ *cascade08
-æñéñéñêñ *cascade08êñëñ*cascade08ëñìñ *cascade08
-ìñîñîñïñ *cascade08
-ïñóñóñüñ *cascade08üñƒò *cascade08ƒò„ò*cascade08„ò…ò *cascade08…ò‡ò*cascade08‡ò•ò *cascade08•ò™ò*cascade08™òÀò *cascade08ÀòÂò*cascade08ÂòÊò *cascade08Êò‹ó*cascade08‹óİó *cascade08İóßó*cascade08ßóàó *cascade08àóóó*cascade08óóôó *cascade08ôóƒô*cascade08ƒô…ô *cascade08…ôŠô*cascade08Šô›ô *cascade08›ô¡ô*cascade08¡ô¢ô *cascade08¢ô¥ô*cascade08¥ô¦ô *cascade08¦ô­ô*cascade08­ô³ô *cascade08
-³ô´ô´ôµô *cascade08
-µô·ô·ôÂô*cascade08ÂôÄô *cascade08ÄôÜô Üôİô*cascade08İôŞô Şôßô*cascade08ßôãô ãôéô *cascade08éôëô *cascade08ëôîô*cascade08îôïô *cascade08ïô÷ô *cascade08
-÷ô™õ™õšõ *cascade08
-šõ¯õ¯õºõ *cascade08ºõ»õ *cascade08»õËõ*cascade08ËõÎõ *cascade08ÎõÚõ*cascade08Úõâõ *cascade08âõåõ*cascade08åõçõ *cascade08çõìõ*cascade08ìõíõ *cascade08íõïõ*cascade08ïõŠö *cascade08Šö›ö*cascade08›ö·ö *cascade08·ö»ö*cascade08»ö¼ö *cascade08¼öÁö*cascade08ÁöÃö *cascade08ÃöÊö*cascade08ÊöĞö *cascade08ĞöÑö*cascade08ÑöÒö *cascade08ÒöÔö*cascade08ÔöØö *cascade08
-Øöùöùöúö*cascade08úöûö *cascade08ûöşö*cascade08şöÿö *cascade08ÿö‚÷*cascade08‚÷ƒ÷ *cascade08ƒ÷‡÷*cascade08‡÷ˆ÷ *cascade08ˆ÷Š÷*cascade08Š÷÷ *cascade08
-÷¤÷¤÷¦÷ *cascade08¦÷¨÷*cascade08¨÷©÷ *cascade08©÷ª÷*cascade08
-ª÷®÷®÷¯÷ *cascade08¯÷°÷ *cascade08°÷±÷*cascade08±÷È÷ *cascade08È÷Ê÷ Ê÷Ö÷ *cascade08Ö÷ã÷ ã÷å÷*cascade08å÷í÷ í÷ï÷*cascade08ï÷ğ÷ ğ÷ò÷*cascade08ò÷ö÷ ö÷÷÷*cascade08÷÷ˆø ˆøø *cascade08øø*cascade08øø *cascade08ø™ø*cascade08™ø›ø *cascade08›ø¼ø*cascade08¼ø½ø *cascade08½øÃø*cascade08ÃøÅø *cascade08ÅøÆø*cascade08ÆøÇø *cascade08ÇøÊø*cascade08ÊøËø *cascade08ËøÒø *cascade08ÒøÓø *cascade08ÓøØø*cascade08ØøÙø *cascade08ÙøÛø*cascade08ÛøÜø *cascade08Üøİø*cascade08İøæø *cascade08æøèø*cascade08èøéø *cascade08éøëø*cascade08ëøìø *cascade08ìøğø*cascade08ğøòø *cascade08òøóø*cascade08óøõø*cascade08õøöø*cascade08öøùø*cascade08ùøûø *cascade08ûøüø *cascade08üø€ù*cascade08€ù‚ù *cascade08‚ù„ù *cascade08„ù†ù *cascade08†ùˆù*cascade08ˆù‰ù *cascade08‰ùù*cascade08ù“ù *cascade08“ù¤ù *cascade08¤ù¨ù*cascade08¨ù©ù *cascade08©ù¬ù*cascade08¬ù­ù *cascade08­ù®ù*cascade08®ù¯ù *cascade08¯ù°ù*cascade08°ù±ù *cascade08±ù³ù*cascade08³ù¹ù *cascade08¹ùºù *cascade08ºùÉù*cascade08ÉùËù *cascade08ËùĞù*cascade08ĞùÑù *cascade08ÑùÚù*cascade08ÚùÛù *cascade08Ûùâù*cascade08âùãù *cascade08ãùåù*cascade08åùæù *cascade08æùîù*cascade08îùïù *cascade08ïùğù*cascade08ğùñù *cascade08ñùÿù *cascade08ÿù€ú *cascade08
-€úÅúÅúñû *cascade08ñûòû*cascade08òûóû *cascade08óûõû*cascade08õû†ü *cascade08†ü®ü*cascade08®ü·ü *cascade08·ü¹ü*cascade08¹üÄı *cascade08ÄıÊş*cascade082Ofile:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css
+}} 
+}›} ›}¬}
+¬}­} ­} ¡ 
+ ¡¡¡¡¡’˜ 
+’˜”˜”˜³± 
+³±·±·±º¹ 
+º¹¾¹¾¹¯¾ 
+¯¾°¾°¾ÌÔ 
+ÌÔÎÔÎÔ“× 
+“×”×”×¾Ù ¾ÙÀÙ ÀÙƒÚ 
+ƒÚ„Ú„ÚÈÚ 
+ÈÚÉÚÉÚˆÛ 
+ˆÛ‰Û‰ÛÍÛ 
+ÍÛÎÛÎÛÜ 
+Ü‘Ü‘ÜêÜ êÜ¬ï *cascade08¬ï­ï*cascade08­ï¶ï *cascade08¶ïäï*cascade08äï•ğ *cascade08•ğ±ğ*cascade08±ğ¼ğ *cascade08¼ğÙğ*cascade08ÙğÑñ *cascade08ÑñÒñ*cascade08Òñ×ñ *cascade08×ñ£ò*cascade08£òó *cascade08ó˜ó*cascade08˜ó›ó *cascade08›ó¼ó*cascade08¼óİó*cascade08İóô *cascade08
+ôœôœôô *cascade08ôô*cascade08ô¡ô *cascade08¡ô§ô *cascade08§ôªô *cascade08
+ªô«ô«ô°ô *cascade08
+°ô²ô²ô´ô *cascade08
+´ô·ô·ôºô *cascade08
+ºôÁôÁôÂô *cascade08
+ÂôÆôÆôÉô *cascade08
+ÉôÎôÎôÖô *cascade08Öôòô *cascade08òôóô*cascade08óôõô *cascade08
+õôúôúôûô *cascade08ûôõ*cascade08õƒõ *cascade08
+ƒõ˜õ˜õœõ *cascade08œõõ*cascade08õõ *cascade08õ¡õ*cascade08¡õ¢õ *cascade08¢õ£õ*cascade08£õ¤õ *cascade08¤õ¥õ*cascade08¥õ¦õ*cascade08¦õ²õ *cascade08²õ³õ*cascade08
+³õ´õ´õÀõ *cascade08
+ÀõÂõÂõÃõ *cascade08
+ÃõÅõÅõÆõ *cascade08ÆõÈõ*cascade08ÈõÉõ *cascade08
+ÉõÍõÍõÎõ *cascade08ÎõÏõ *cascade08
+Ïõ×õ×õØõ *cascade08ØõÙõ*cascade08ÙõÛõ *cascade08ÛõÜõ *cascade08
+Üõßõßõàõ *cascade08àõâõ*cascade08âõãõ *cascade08ãõäõ *cascade08äõçõ *cascade08çõèõ*cascade08èõéõ *cascade08éõêõ*cascade08êõëõ *cascade08ëõìõ*cascade08ìõîõ *cascade08îõğõ*cascade08ğõñõ *cascade08ñõóõ*cascade08óõøõ *cascade08øõúõ*cascade08úõûõ *cascade08ûõüõ*cascade08üõşõ *cascade08şõ€ö*cascade08€öö *cascade08ö‚ö*cascade08‚ö‹ö *cascade08‹öö*cascade08ö‘ö *cascade08‘ö–ö*cascade08–ö—ö *cascade08—ö˜ö*cascade08˜ö›ö *cascade08›ö¡ö*cascade08¡ö÷ *cascade08÷¡÷*cascade08¡÷£÷ *cascade08£÷¥÷*cascade08¥÷§÷ *cascade08§÷©÷ *cascade08©÷¬÷*cascade08¬÷­÷ *cascade08­÷³÷*cascade08³÷¹÷ *cascade08¹÷¼÷ *cascade08
+¼÷Á÷Á÷Â÷ *cascade08
+Â÷Å÷Å÷Æ÷ *cascade08Æ÷Ç÷*cascade08Ç÷É÷ *cascade08É÷Ò÷*cascade08Ò÷×÷ *cascade08×÷Ş÷*cascade08Ş÷à÷ *cascade08à÷â÷*cascade08â÷ã÷ *cascade08ã÷ä÷*cascade08ä÷ç÷ *cascade08ç÷ë÷*cascade08ë÷ì÷ *cascade08ì÷ò÷*cascade08ò÷ô÷*cascade08ô÷õ÷ *cascade08õ÷ú÷*cascade08ú÷û÷ *cascade08
+û÷‚ø‚øƒø *cascade08ƒø„ø*cascade08„ø…ø *cascade08…ø†ø *cascade08
+†ø‰ø‰øŠø *cascade08Šø‹ø *cascade08‹øø*cascade08øø *cascade08øƒù*cascade08ƒùûù *cascade08ûùú*cascade08ú²ú *cascade08²ú¶ú*cascade08¶úÈú *cascade08ÈúÉú*cascade08ÉúÊú *cascade08ÊúÎú*cascade08ÎúÏú *cascade08ÏúÓú*cascade08Óúóú *cascade08
+óú„û„û†û *cascade08†ûŠû *cascade08Šû‘û *cascade08‘û’û*cascade08’û“û *cascade08“û•û*cascade08•û£û *cascade08£û§û*cascade08§ûÎû *cascade08ÎûĞû*cascade08ĞûØû *cascade08Øû™ü*cascade08™üëü *cascade08ëüíü*cascade08íüîü *cascade08îü÷ü *cascade08÷ü‡ı *cascade08‡ıı*cascade08ıı *cascade08ı‘ı*cascade08‘ı’ı *cascade08’ı™ı*cascade08™ıŸı *cascade08
+Ÿı ı ı¡ı *cascade08
+¡ı£ı£ı®ı*cascade08®ı¶ı *cascade08¶ı¸ı *cascade08¸ı»ı*cascade08»ı¼ı *cascade08¼ıÄı *cascade08ÄıÆı ÆıĞı *cascade08ĞıÑı *cascade08Ñıáı*cascade08áıäı *cascade08äığı*cascade08ğıøı *cascade08øıûı*cascade08ûııı *cascade08ıı‚ş*cascade08‚şƒş *cascade08ƒş…ş*cascade08…ş ş *cascade08 ş±ş*cascade08±şÍş *cascade08ÍşÑş*cascade08ÑşÒş *cascade08Òş×ş*cascade08×şÙş *cascade08Ùşàş*cascade08àşæş *cascade08æşçş*cascade08çşèş *cascade08èşêş*cascade08êşîş *cascade08îşÿş ÿş’ÿ *cascade08’ÿ”ÿ ”ÿ¥ÿ *cascade08¥ÿ§ÿ*cascade08§ÿ¨ÿ *cascade08¨ÿ±ÿ*cascade08±ÿ³ÿ *cascade08³ÿÔÿ*cascade08ÔÿÕÿ *cascade08ÕÿÛÿ*cascade08Ûÿİÿ *cascade08İÿŞÿ*cascade08Şÿßÿ *cascade08ßÿâÿ*cascade08âÿãÿ *cascade08ãÿêÿ *cascade08êÿëÿ *cascade08ëÿğÿ*cascade08ğÿñÿ *cascade08ñÿóÿ*cascade08óÿôÿ *cascade08ôÿõÿ*cascade08õÿ÷ÿ *cascade08÷ÿ‡€ *cascade08‡€‹€*cascade08‹€Œ€ *cascade08Œ€€*cascade08€€ *cascade08€‘€*cascade08‘€’€ *cascade08’€“€*cascade08“€”€ *cascade08”€–€*cascade08–€œ€ *cascade08œ€€ *cascade08€¬€*cascade08¬€®€ *cascade08®€³€*cascade08³€´€ *cascade08´€½€*cascade08½€¾€ *cascade08¾€Å€*cascade08Å€Æ€ *cascade08Æ€È€*cascade08È€É€ *cascade08É€Ñ€*cascade08Ñ€Ò€ *cascade08Ò€Ó€*cascade08Ó€Ô€ *cascade08Ô€â€ *cascade08â€ã€ *cascade08ã€ô€ 
+ô€õ€õ€ø€ 
+ø€²²³ ³Ş‚ *cascade08Ş‚ß‚*cascade08ß‚à‚ *cascade08à‚â‚*cascade08â‚ó‚ *cascade08ó‚›ƒ*cascade08›ƒ¤ƒ *cascade08¤ƒ¦ƒ*cascade08¦ƒ±„ *cascade08±„·…*cascade082Ofile:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/style.css

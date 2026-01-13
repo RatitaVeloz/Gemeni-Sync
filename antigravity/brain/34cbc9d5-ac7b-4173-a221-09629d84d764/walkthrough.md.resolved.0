@@ -1,0 +1,53 @@
+# Walkthrough - Responsive Reviews Grid
+
+Implemented responsive design updates for the `[ocean_reviews_grid_test]` shortcode to improve readability on smaller screens.
+
+## Changes
+
+Modified [inc/reviews-test.php](file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/reviews-test.php) to include specific media queries.
+
+### Responsive Breakpoints
+
+| Breakpoint | Device Target | Font Size (Text) | Font Size (Author) | Card Padding |
+| :--- | :--- | :--- | :--- | :--- |
+| **> 1500px** | Default / Large | 20px | 20px | 40px |
+| **1251px - 1500px** | Laptop | 18px | 20px | 35px |
+| **768px - 1250px** | Tablet | 17px | 18px | 30px |
+| **< 767px** | Mobile | 15px | 16px | 20px |
+
+### Code Updates
+
+Refactored the `<style>` block to organize breakpoints and override base styles appropriately.
+
+```css
+        /* Laptop (1251px - 1500px) */
+        @media (max-width: 1500px) {
+            .ocean-review-card { padding: 35px; }
+            .ocean-review-text { font-size: 18px; }
+            /* ... */
+        }
+
+        /* Tablet (768px - 1250px) */
+        @media (max-width: 1250px) {
+            .ocean-review-card { padding: 30px; }
+            .ocean-review-text { font-size: 17px; }
+            /* ... */
+        }
+
+        /* Mobile (< 767px) */
+        @media (max-width: 767px) {
+             /* Stack columns, hide arrows, smaller text */
+            .ocean-reviews-slide { grid-template-columns: 1fr; }
+            .ocean-review-card { padding: 20px; }
+            .ocean-review-text { font-size: 15px; }
+            /* ... */
+        }
+```
+
+## Verification
+
+The styles are applied directly within the shortcode output, ensuring no caching issues with external CSS files for this specific component.
+User should verify on:
+1.  **Mobile**: Check that cards stack (1 column) and text is readable (15px).
+2.  **Tablet**: Check 2 column grid with slightly smaller text (17px).
+3.  **Laptop**: Check transition at 1500px.

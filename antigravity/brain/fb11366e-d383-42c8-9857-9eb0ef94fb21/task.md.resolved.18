@@ -35,11 +35,6 @@
     - [x] Remove top gray line (shadow/border) <!-- id: 32 -->
     - [x] Align close button and filters (20px side padding) <!-- id: 33 -->
 - [x] Verify Alignment <!-- id: 34 -->
-- [x] Final Polish: Slider Padding <!-- id: 35 -->
-    - [x] Increase side padding to 25px <!-- id: 36 -->
-- [x] Verify Slider Padding <!-- id: 37 -->
-- [x] Style Amenities Dropdown <!-- id: 38 -->
-    - [x] Change text to "Cualquiera" <!-- id: 39 -->
-    - [x] Apply filter-select styles to summary <!-- id: 40 -->
-    - [x] Add dropdown arrow <!-- id: 41 -->
-- [x] Verify Amenities Style <!-- id: 42 -->
+- [/] Final Polish: Slider Padding <!-- id: 35 -->
+    - [ ] Increase side padding to 25px <!-- id: 36 -->
+- [ ] Verify Slider Padding <!-- id: 37 -->

@@ -1,0 +1,34 @@
+# Sync Instructions for Notebook
+
+## 1. Install Git
+If you haven't already, install Git on your notebook.
+
+## 2. Clone the Repository
+Open a terminal (PowerShell or Command Prompt) on your notebook and run:
+
+```powershell
+cd C:\Users\YOUR_USER\
+# Backup existing .gemini if it exists
+ren .gemini .gemini.bak
+# Clone the repo
+git clone https://github.com/RatitaVeloz/Gemeni-Sync.git .gemini
+```
+
+## 3. Restore Credentials (IMPORTANT)
+The [oauth_creds.json](file:///C:/Users/tanga/.gemini/oauth_creds.json) and [google_accounts.json](file:///C:/Users/tanga/.gemini/google_accounts.json) files were **ignored** for security.
+You must **manually copy** these files from your Desktop's `.gemini` folder to your Notebook's `.gemini` folder, OR re-login on the notebook.
+
+## 4. Syncing in the future
+**On Desktop (after chatting):**
+```powershell
+cd C:\Users\tanga\.gemini
+git add .
+git commit -m "Sync conversations"
+git push
+```
+
+**On Notebook (before chatting):**
+```powershell
+cd C:\Users\YOUR_USER\.gemini
+git pull
+```

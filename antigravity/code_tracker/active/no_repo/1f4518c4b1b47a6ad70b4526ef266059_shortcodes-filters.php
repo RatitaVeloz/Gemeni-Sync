@@ -1,4 +1,4 @@
-­³<?php
+¡³<?php
 
 /**
  * Sidebar Filters Shortcode
@@ -285,7 +285,7 @@ function op_sidebar_filters_shortcode($atts)
                         <div class="filter-group">
                             <label>Amenidades</label>
                             <details class="amenities-dropdown">
-                                <summary class="amenities-summary">Seleccionar amenidades</summary>
+                                <summary class="amenities-summary">Cualquiera</summary>
                                 <div class="amenities-checkboxes">
                                     <?php
                                     $amenities_options = [
@@ -420,4 +420,4 @@ function op_sidebar_filters_shortcode($atts)
     return ob_get_clean();
 }
 add_shortcode('op_sidebar_filters', 'op_sidebar_filters_shortcode');
-­³*cascade082`file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php
+÷y *cascade08÷yúy*cascade08úyûy *cascade08ûyýy*cascade08ýyÿy *cascade08ÿy€z*cascade08€z¡³ *cascade082`file:///c:/xampp/htdocs/ocean/wp-content/themes/hello-elementor-child/inc/shortcodes-filters.php

@@ -1,6 +1,6 @@
 {
   "artifactType": "ARTIFACT_TYPE_WALKTHROUGH",
-  "summary": "Updated walkthrough to include alignment and cleanup adjustments.\nAdded details about removing the top gray line and aligning padding.",
-  "updatedAt": "2026-01-13T14:19:34.549075700Z",
-  "version": "6"
+  "summary": "Updated walkthrough to include amenities dropdown styling.\nAdded details about matching the select input style and changing the text.",
+  "updatedAt": "2026-01-13T14:41:00.183247400Z",
+  "version": "8"
 }

@@ -1,0 +1,6 @@
+{
+  "artifactType":  "ARTIFACT_TYPE_WALKTHROUGH",
+  "summary":  "Reduced typography for `[ocean_dynamic_booking]` shortcode. updated `inc/shortcodes-booking.php` to decrease font sizes for Title, Labels, and Inputs.",
+  "updatedAt":  "2026-01-13T15:24:58.398036400Z",
+  "version":  "2"
+}
