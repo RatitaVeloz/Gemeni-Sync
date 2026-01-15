@@ -1,0 +1,16 @@
+# Task List
+
+- [/] Analyze current structure and button styles <!-- id: 0 -->
+    - [x] Search for "catalogo" related files <!-- id: 1 -->
+    - [x] Inspect theme CSS for button classes <!-- id: 2 -->
+- [x] Debug "Catalogo" page error <!-- id: 8 -->
+    - [x] Search for `page-catalogo.php` or specific templates <!-- id: 9 -->
+    - [x] Review `functions.php` redirection logic <!-- id: 10 -->
+    - [x] Analyze User screenshots (Shop Page Elementor restriction) <!-- id: 11 -->
+- [x] Implement changes <!-- id: 6 -->
+    - [x] Add `[koby_boton_pdf]` shortcode to `functions.php` <!-- id: 12 -->
+    - [x] Add hook to inject button on Shop page <!-- id: 13 -->
+    - [x] Update PDF URL with final link <!-- id: 15 -->
+- [x] Verify implementation <!-- id: 7 -->
+    - [x] Confirm alignment with user <!-- id: 14 -->
+- [ ] Verify implementation <!-- id: 7 -->

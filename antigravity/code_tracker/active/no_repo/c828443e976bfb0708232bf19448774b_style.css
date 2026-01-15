@@ -1,0 +1,1417 @@
+÷—/*
+Theme Name: Rappod Child
+Theme URI: http://www.wpbingosite.com/rappod
+Author: wpbingo
+Description: This is a child theme for Rappod
+Version: 1.0.5
+Author URI: http://wpbingosite.com
+Template: rappod
+Text Domain: rappod-child
+*/
+
+/*************** ADD YOUR CUSTOM CSS HERE  ***************/
+:root {
+  --theme-color: #f6b100;
+  --button-color: #f6b100;
+  --theme-color: #f6b100;
+  --theme-color-hover: #279ed9;
+  --button-radius: 50px;
+  --button-font-size: 18px;
+  --button-font-weight: 700;
+  --button-padding-x: 50px;
+  --button-padding-y: 0px;
+  --button-height: 50px;
+  --button-text-color: #fff;
+  --button-border: 1px dashed #fff;
+  --button-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  --button-transition: all .3s ease;
+  --button-font-family: "Catamaran", "Roboto", Arial, Helvetica, sans-serif;
+}
+
+.elementor-button {
+  font-family: var(--button-font-family);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  color: var(--button-text-color) !important;
+  background: var(--theme-color) !important;
+  border: var(--button-border) !important;
+  border-radius: var(--button-radius);
+  line-height: var(--button-height);
+  padding: var(--button-padding-y) var(--button-padding-x);
+  transition: var(--button-transition);
+  box-shadow: var(--button-shadow);
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.elementor-button:hover,
+.elementor-button:focus {
+  background: var(--theme-color-hover) !important;
+  color: #fff !important;
+  border: 1px dashed var(--theme-color-hover) !important;
+  outline: none;
+}
+
+
+/* header */
+#bwp-header,
+#bwp-header *,
+.header-desktop,
+.header-mobile,
+.header-wrapper,
+.header-container,
+.header-menu,
+.header-menu-bg,
+.header-menu-wrapper,
+.topbar-inner,
+.topbar-container,
+.header-logo,
+.header-page-link,
+.header-icon {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* Fondo blanco solo cuando el header tiene la clase sticky */
+#bwp-header.sticky {
+  background: #fff !important;
+  transition: background 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.06) !important;
+  /* sombra suave */
+  z-index: 1001;
+}
+
+/* Fondo blanco a las capas internas del header sticky */
+#bwp-header.sticky .header-wrapper,
+#bwp-header.sticky .container,
+#bwp-header.sticky .header-container,
+#bwp-header.sticky .header-desktop,
+#bwp-header.sticky .header-mobile {
+  background: #fff !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+/* Si alguna capa overlaya el fondo, fuerza tambi√©n */
+#bwp-header.sticky::before,
+#bwp-header.sticky::after,
+#bwp-header.sticky .header-wrapper::before,
+#bwp-header.sticky .header-wrapper::after {
+  background: #fff !important;
+  opacity: 1 !important;
+}
+
+body>#bwp-header,
+body>header,
+body>.bwp-header {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+#bwp-header::before,
+#bwp-header::after,
+.header-wrapper::before,
+.header-wrapper::after {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  opacity: 0 !important;
+}
+
+.elementor-31665 .elementor-element.elementor-element-f1f51cb {
+  margin-top: -156px;
+}
+
+#bwp_form_filter_product,
+.topbar-container,
+.search-box.search-dropdown,
+.login-header,
+.wishlist-box,
+.rappod-topcart,
+.slick-list .draggable {
+  display: none !important;
+}
+
+
+/*************** Blog List Layout ***************/
+.list-post article {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.list-post .entry-thumb {
+  flex: 0 0 35%;
+}
+
+.list-post .entry-thumb img {
+  width: 100%;
+  height: auto;
+}
+
+.list-post .post-content {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .list-post article {
+    flex-direction: column;
+  }
+
+  .list-post .entry-thumb {
+    flex-basis: auto;
+  }
+}
+
+
+.site-footer-simple {
+  background-color: #f8f9fa;
+  padding: 40px 0 20px;
+  border-top: 1px solid #e9e9e9;
+  text-align: center;
+}
+
+
+.site-footer-simple .footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .site-footer-simple .footer-inner {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+
+.site-footer-simple .footer-logo img {
+  max-width: 150px;
+  height: auto;
+}
+
+
+.site-footer-simple .footer-navigation .footer-menu {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer-simple .footer-navigation .footer-menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-footer-simple .footer-navigation .footer-menu a:hover {
+  color: #000;
+}
+
+
+.site-footer-simple .footer-social .social-list .screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-footer-simple .footer-social .social-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.site-footer-simple .footer-social .social-list li {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+
+.site-footer-simple .footer-social .social-list li::before {
+  font-family: "Font Awesome 6 Brands" !important;
+  speak: none;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5em;
+  color: #000;
+}
+
+.site-footer-simple .footer-social .social-list li.facebook::before {
+  content: "\f09a" !important;
+}
+
+.site-footer-simple .footer-social .social-list li.instagram::before {
+  content: "\f16d" !important;
+}
+
+.site-footer-simple .footer-social .social-list li {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.site-footer-simple .footer-social .social-list li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+
+.site-footer-simple {
+  padding: 40px 20px 20px !important;
+}
+
+
+.site-footer-simple {
+  padding: 40px 80px 80px !important;
+}
+
+
+.site-footer-simple .footer-navigation .footer-menu a {
+  font-size: 1.2rem !important;
+}
+
+.site-footer-simple .footer-social .social-list li {
+  width: 5em !important;
+  height: 5em !important;
+}
+
+
+.site-footer-simple .footer-social .social-list li::before {
+  font-size: 2em !important;
+}
+
+.bwp-copyright {
+  display: none !important;
+}
+
+
+.location_pagination1.wpgmp_pagination {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+
+.location_pagination1.wpgmp_pagination span.current,
+.location_pagination1.wpgmp_pagination a {
+  display: inline-block;
+  margin: 0 .25rem;
+  padding: .5rem .75rem;
+  border: 1px solid #ccc;
+  border-radius: .25rem;
+  background: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.location_pagination1.wpgmp_pagination span.current {
+  background: #000;
+  color: #fff;
+}
+
+
+.location_pagination1.wpgmp_pagination a.next {
+  font-weight: bold;
+}
+
+
+.wpgmp_filter_wrappers {
+  background: #fafafb;
+  border-radius: 0.25rem;
+
+
+}
+
+
+.wpgmp_filter_wrappers .wpgmp_before_listing {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+}
+
+.wpgmp_filter_wrappers .categories_filter {
+  margin-top: 1rem;
+}
+
+.entry-social-share {
+  display: none;
+}
+
+.rating .none {
+  display: none;
+}
+
+.woosw-wishlist {
+  display: none !important;
+}
+
+/* lista sucursales */
+body.page-id-51807 .wpgmp_categories .fc-item-featured {
+  display: none !important;
+}
+
+body.page-id-51807 .wpgmp_categories .fc-item-title .place_title {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+}
+
+body.page-id-51807 .wpgmp_categories .fc-location-marker {
+  font-size: 1rem !important;
+}
+
+body.page-id-51807 .wpgmp_filter_wrappers {
+  margin: 32px 0px;
+  padding: 36px 34px 30px 34px;
+  background: linear-gradient(90deg, #eaf6fd 70%, #fffde6 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 18px rgba(60, 80, 120, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  border-left: none;
+}
+
+body.page-id-51807 .wpgmp_before_listing {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: rgb(68, 68, 68);
+  margin-bottom: 12px;
+  padding: 0 0 0 0;
+  border: none;
+  background: none;
+  text-shadow: 0 2px 8px rgba(39, 158, 217, 0.09);
+}
+
+body.page-id-51807 .wpgmp_listing_header {
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+body.page-id-51807 .wpgmp_search_form {
+  width: 100%;
+  margin: 0;
+}
+
+body.page-id-51807 .wpgmp_search_input {
+  width: 100%;
+  min-width: 0;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid #279ed9;
+  font-size: 1.14rem;
+  background: #fff;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  box-shadow: 0 2px 14px rgba(39, 158, 217, 0.06);
+  margin: 0;
+}
+
+body.page-id-51807 .wpgmp_search_input:focus {
+  border-color: #f6b100;
+  box-shadow: 0 0 0 2px #f6b10055;
+}
+
+body.page-id-51807 .location_pagination1.wpgmp_pagination {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 18px 0 0 0;
+  font-size: 1.12rem;
+}
+
+
+body.page-id-51807 .location_pagination1.wpgmp_pagination span.current {
+  background: #279ed9 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 10px 16px !important;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* footer responsive */
+
+@media (max-width: 767px) {
+
+  /* --- General Overflow --- */
+  html,
+  body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+
+  /* --- Footer --- */
+  .site-footer-simple {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .site-footer-simple .footer-navigation .footer-menu,
+  .site-footer-simple .footer-social .social-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* --- Contact Form 7 --- */
+
+  /* Fix the container width set by Elementor */
+  .elementor-15115 .elementor-element.elementor-element-93a4430 {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Stack the columns inside the form */
+  .elementor-element-93a4430 .contact-us-form .row {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .elementor-element-93a4430 .contact-us-form .row>[class*="col-"] {
+    width: 100% !important;
+    flex: 1 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 15px !important;
+  }
+}
+
+/* ===== WP MAPS PRO ‚Äì Responsive Tablet & Mobile ===== */
+
+/* Tablet & Mobile: <= 767px */
+@media (max-width: 767px) {
+
+  /* Contenedor principal y mapa */
+  .wpgmp_map_container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .wpgmp_map,
+  .wpgmp-google-map {
+    width: 100% !important;
+    min-width: 100% !important;
+    height: 300px !important;
+    max-width: 100vw !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* T√≠tulo de la lista */
+  .wpgmp_before_listing {
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    margin-top: 24px !important;
+    margin-bottom: 18px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    letter-spacing: 0.5px !important;
+    color: #222 !important;
+    display: block !important;
+  }
+
+  /* Filtros, cabecera, buscador */
+  .wpgmp_filter_wrappers,
+  .wpgmp_listing_header,
+  .categories_filter {
+    width: 100% !important;
+    padding: 0 8px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .wpgmp_search_form {
+    width: 100% !important;
+    margin-bottom: 10px !important;
+  }
+
+  .wpgmp_search_input {
+    width: 100% !important;
+    font-size: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Listado masonry/grid como columna */
+  .wpgmp_listing_grid,
+  .masonry {
+    display: block !important;
+    gap: 0 !important;
+  }
+
+  /* Cards de sucursal */
+  .fc-item-box {
+    width: 100% !important;
+    margin: 0 0 18px 0 !important;
+    float: none !important;
+    position: static !important;
+    min-width: 0 !important;
+    max-width: 100vw !important;
+    padding: 14px 12px !important;
+    background: #fff !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  /* T√≠tulos, textos internos */
+  .fc-item-title,
+  .fc-item-content {
+    font-size: 1rem !important;
+    word-break: break-word !important;
+  }
+
+  /* Direcci√≥n con icono alineado */
+  .fc-location-marker {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin-top: 6px !important;
+    font-size: 1rem !important;
+    word-break: break-word !important;
+  }
+
+  .fc-location-marker i,
+  .fc-location-marker svg,
+  .fc-location-marker img {
+    margin-right: 6px !important;
+    min-width: 18px !important;
+    width: 18px !important;
+    height: 18px !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* Paginaci√≥n */
+  .location_pagination1,
+  .wpgmp_pagination {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    float: none !important;
+    gap: 6px !important;
+    margin-top: 18px !important;
+    margin-bottom: 18px !important;
+    font-size: 16px !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+  }
+
+  .location_pagination1 a,
+  .wpgmp_pagination a,
+  .location_pagination1 span.current,
+  .wpgmp_pagination span.current {
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    background: #f5f5f5 !important;
+    color: #333 !important;
+    text-decoration: none !important;
+    border: 1px solid #e2e2e2 !important;
+    display: inline-block !important;
+    min-width: 32px !important;
+    text-align: center !important;
+  }
+
+  .location_pagination1 span.current,
+  .wpgmp_pagination span.current {
+    background: #00a985 !important;
+    color: #fff !important;
+    border-color: #00a985 !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* Mobile: <= 480px */
+@media (max-width: 480px) {
+
+  .wpgmp_map,
+  .wpgmp-google-map {
+    height: 200px !important;
+  }
+
+  .wpgmp_filter_wrappers,
+  .wpgmp_listing_header,
+  .wpgmp_before_listing,
+  .categories_filter,
+  .fc-item-title,
+  .fc-item-content,
+  .fc-location-marker {
+    font-size: 18px !important;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+  }
+
+  .wpgmp_search_input {
+    font-size: 14px !important;
+    padding: 6px 8px !important;
+  }
+
+  .location_pagination1,
+  .wpgmp_pagination {
+    font-size: 14px !important;
+    gap: 4px !important;
+  }
+
+  .location_pagination1 a,
+  .wpgmp_pagination a,
+  .location_pagination1 span.current,
+  .wpgmp_pagination span.current {
+    padding: 5px 8px !important;
+    min-width: 26px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .fc-location-marker {
+    padding-left: 22px !important;
+    font-size: 15px !important;
+    background-size: 16px 16px !important;
+    background-position: 0 4px !important;
+    min-height: 20px !important;
+  }
+}
+
+/* catalogo */
+.woocommerce-ordering.pwb-dropdown.dropdown,
+.woocommerce-ordering.pwb-dropdown.dropdown.show {
+  display: none !important;
+
+}
+
+.woocommerce-product-subcategorie-content ul.woocommerce-product-subcategories {
+  display: none !important;
+}
+
+/* widget husky */
+
+.woof_list_checkbox li div {
+  margin: 0 !important;
+
+}
+
+.woof_checkbox_label {
+  margin: 0 !important;
+}
+
+.woof_checkbox_label {
+  padding: 0 0 0 4px !important;
+}
+
+.woof_term_15 {
+  display: none !important;
+}
+
+.woof_reset_button_2 {
+  /* Colores y Fondo */
+  background-color: var(--button-color, #f6b100) !important;
+  color: #fff !important;
+  border: 1px dashed #fff !important;
+
+  /* Tipograf√≠a */
+  font-family: "Catamaran", "Roboto", Arial, Helvetica, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  text-transform: capitalize !important;
+
+  /* Dimensiones y Espaciado */
+  padding: 10px 25px !important;
+  border-radius: 50px !important;
+
+  /* Efectos */
+  cursor: pointer;
+  transition: all .3s ease !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.woof_reset_button_2:hover {
+  background-color: #279ed9 !important;
+}
+
+.woof_products_top_panel_ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.woof_products_top_panel_ul>li>ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+/* Mejora de tarjetas en Catalogo */
+:root {
+  --td-gutter: 24px;
+  --td-card-radius: 14px;
+  --td-card-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+  --td-card-shadow-hover: 0 12px 28px rgba(0, 0, 0, .14);
+  --td-card-border: 1px solid rgba(0, 0, 0, .06);
+  --td-card-bg: #fff;
+  --td-anim: 240ms cubic-bezier(.2, .7, .2, 1);
+  --td-pad-x: 16px;
+}
+
+/* ===== LISTA ===== */
+ul.products.products-list.row.grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  margin-left: calc(var(--td-gutter) * -0.5);
+  margin-right: calc(var(--td-gutter) * -0.5);
+}
+
+ul.products.products-list.row.grid>li {
+  margin-left: calc(var(--td-gutter) * .5);
+  margin-right: calc(var(--td-gutter) * .5);
+  margin-bottom: var(--td-gutter);
+  box-sizing: border-box;
+}
+
+/* FIX 3 columnas */
+@media (min-width: 992px) {
+  ul.products.products-list.row.grid>li.col-lg-4 {
+    flex: 0 0 calc(33.333% - var(--td-gutter));
+    max-width: calc(33.333% - var(--td-gutter));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  ul.products.products-list.row.grid>li.col-md-4 {
+    flex: 0 0 calc(33.333% - var(--td-gutter));
+    max-width: calc(33.333% - var(--td-gutter));
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  ul.products.products-list.row.grid>li.col-sm-4 {
+    flex: 0 0 calc(33.333% - var(--td-gutter));
+    max-width: calc(33.333% - var(--td-gutter));
+  }
+}
+
+@media (max-width: 575.98px) {
+  ul.products.products-list.row.grid>li.col-6 {
+    flex: 0 0 calc(50% - var(--td-gutter));
+    max-width: calc(50% - var(--td-gutter));
+  }
+}
+
+/* ===== TARJETA ===== */
+.products-entry.content-product1 {
+  position: relative;
+  background: var(--td-card-bg);
+  border: var(--td-card-border);
+  border-radius: var(--td-card-radius);
+  box-shadow: var(--td-card-shadow);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform var(--td-anim), box-shadow var(--td-anim), border-color var(--td-anim);
+  will-change: transform, box-shadow;
+  display: flex;
+  flex-direction: column;
+  min-height: 450px;
+  /* alto m√≠nimo desktop */
+
+  --td-tiltX: 0deg;
+  --td-tiltY: 0deg;
+  transform: perspective(900px) rotateX(var(--td-tiltX)) rotateY(var(--td-tiltY));
+}
+
+@media (max-width: 767px) {
+  .products-entry.content-product1 {
+    min-height: 385px;
+    /* alto m√≠nimo celulares */
+  }
+}
+
+ul.products.products-list.row.grid>li[class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Imagen */
+.products-entry.content-product1 .products-thumb a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top-left-radius: calc(var(--td-card-radius) - 1px);
+  border-top-right-radius: calc(var(--td-card-radius) - 1px);
+  transition: transform var(--td-anim), filter var(--td-anim);
+  transform-origin: center center;
+}
+
+/* Padding interno */
+.products-entry.content-product1 .products-content .contents {
+  padding: 0 var(--td-pad-x) 16px;
+}
+
+.products-entry.content-product1 .products-content .product-title,
+.products-entry.content-product1 .woocommerce-loop-product__title {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  line-height: 1.28;
+}
+
+/* Bot√≥n */
+.products-entry.content-product1 .button {
+  display: inline-block;
+  margin: 12px var(--td-pad-x) 16px;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform var(--td-anim), opacity var(--td-anim);
+  border-radius: 999px;
+}
+
+/* Hover */
+@media (hover:hover) and (pointer:fine) {
+  .products-entry.content-product1:hover {
+    box-shadow: var(--td-card-shadow-hover);
+    border-color: rgba(0, 0, 0, .10);
+  }
+
+  .products-entry.content-product1:hover .products-thumb a img {
+    transform: scale(1.04);
+    filter: saturate(1.02);
+  }
+
+  .products-entry.content-product1:hover .button {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Accesibilidad */
+.products-entry.content-product1:focus-within {
+  outline: 2px solid rgba(4, 120, 255, .35);
+  outline-offset: 2px;
+  box-shadow: var(--td-card-shadow-hover);
+}
+
+/* Sin tilt en touch */
+@media (hover:none),
+(pointer:coarse) {
+  .products-entry.content-product1 {
+    transform: none !important;
+  }
+}
+
+/* Ajuste gutters */
+@media (max-width: 1200px) {
+  :root {
+    --td-gutter: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  :root {
+    --td-gutter: 16px;
+  }
+}
+
+.bwp-top-bar .display {
+  display: none;
+}
+
+
+
+/* ===========================
+   KOBY ¬∑ Single Product (v3.2)
+   =========================== */
+
+/* ---------- Paleta / tokens ---------- */
+:root {
+  --koby-blue: #173e8f;
+  --koby-orange: #f6b100;
+  --koby-border: rgba(0, 0, 0, .10);
+  --koby-muted: rgba(0, 0, 0, .65);
+  --koby-card: #fff;
+}
+
+/* ---------- Evitar que la imagen principal se estire ---------- */
+.bwp-single-image .woocommerce-product-gallery__image,
+.bwp-single-image .woocommerce-product-gallery__image a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* cambiar por flex-start si la quer√©s alineada a la izquierda */
+}
+
+.bwp-single-image .woocommerce-product-gallery__image img {
+  width: auto !important;
+  /* clave: no forzar 100% */
+  max-width: 100% !important;
+  /* solo reduce si es m√°s grande */
+  height: auto !important;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+/* ---------- Contenedor general ---------- */
+.koby-specs {
+  margin-top: 12px;
+}
+
+/* ---------- Header (claim + medida) ---------- */
+.koby-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  margin: 6px 0 16px;
+}
+
+.koby-claim {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  background: rgba(23, 62, 143, .08);
+  color: var(--koby-blue);
+  border: 1px solid rgba(23, 62, 143, .18);
+}
+
+.koby-measure-img {
+  height: 44px;
+  width: auto;
+  display: inline-block;
+}
+
+.koby-measure-badge {
+  min-width: 64px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-align: center;
+  border: 1px solid var(--koby-border);
+}
+
+/* ---------- T√≠tulos y separaci√≥n de bloques ---------- */
+.koby-block {
+  margin: 20px 0;
+}
+
+.koby-block-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+/* ---------- Caracter√≠sticas (lista con check) ---------- */
+.koby-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.koby-list--checks li {
+  position: relative;
+  padding-left: 28px;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.koby-list--checks li .koby-bullet {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--koby-orange);
+}
+
+.koby-list--checks li .koby-bullet::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid var(--koby-orange);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ---------- Variantes (dots de color) ---------- */
+.koby-variants-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.koby-variant {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.koby-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, .18);
+  display: inline-block;
+}
+
+.koby-variant-name {
+  font-weight: 600;
+}
+
+.koby-variant-code {
+  color: var(--koby-muted);
+  margin-left: 6px;
+}
+
+/* ---------- Presentaciones (estilo cat√°logo) ---------- */
+.koby-presentations--enhanced .koby-pres-grid {
+  display: grid;
+  gap: 12px 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 12px 0;
+  border-top: 2px dashed var(--koby-border);
+  border-bottom: 2px dashed var(--koby-border);
+}
+
+.koby-pres-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.koby-pres-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.koby-pres-texts {
+  display: grid;
+  gap: 1px;
+}
+
+.koby-pres-label {
+  font-weight: 700;
+}
+
+.koby-pres-detail {
+  color: var(--koby-muted);
+}
+
+/* ---------- Informaci√≥n t√©cnica ---------- */
+.koby-tech-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+/* ---------- Packaging debajo de la galer√≠a (3 im√°genes) ---------- */
+.koby-pack-below-gallery {
+  max-width: 540px;
+  /* 480‚Äì600px a gusto */
+  width: 100%;
+  margin: 16px auto 0;
+  /* centrado; usar 16px 0 0 para alinear a la izquierda */
+  padding: 12px;
+  border: 1px solid var(--koby-border);
+  border-radius: 12px;
+  background: var(--koby-card);
+}
+
+.koby-pack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.koby-pack-card {
+  border: 1px solid var(--koby-border);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.koby-pack-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .koby-block-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .koby-presentations--enhanced .koby-pres-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .koby-claim {
+    font-size: 13px;
+  }
+
+  .koby-measure-img {
+    height: 40px;
+  }
+
+  .koby-pack-below-gallery {
+    max-width: 340px;
+    margin-top: 12px;
+  }
+
+  .koby-pack-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* una por fila en mobile */
+}
+
+/* (Opcional) acercar productos relacionados */
+/* .related.products { margin-top: 28px; } */
+
+/* Boton PDF Catalogo */
+.koby-catalog-btn-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* Desktop: Derecha */
+  align-items: flex-end;
+  /* Alineado al fondo */
+  padding: 0;
+}
+
+@media (max-width: 767px) {
+  .koby-catalog-btn-container {
+    justify-content: center;
+    /* Mobile: Centro */
+    padding-bottom: 20px;
+  }
+}£ *cascade08£§§¶ *cascade08¶ßß© *cascade08©™™á *cascade08áààä *cascade08äããç *cascade08çééü *cascade08ü°°õ *cascade08õúú° *cascade08°££∫ *cascade08∫∫∫© *cascade08©©©à *cascade08àââ´' *cascade08´'≠'≠'»' *cascade08»' ' '˘' *cascade08˘'˙'˙'¸' *cascade08¸'˝'˝'ˇ' *cascade08ˇ'Ä(Ä(ñ, *cascade08ñ,ò,ò,∞, *cascade08∞,≤,≤,¶- *cascade08¶-¶-¶-Ô2 *cascade08Ô2Ô2Ô2∏4 *cascade08∏4∏4∏4±9 *cascade08±9±9±9Õ9 *cascade08Õ9Õ9Õ9ó< *cascade08ó<ô<ô<°< *cascade08°<¢<¢<ª< *cascade08ª<Ω<Ω<≈< *cascade08≈<∆<∆<·< *cascade08·<„<„<Î< *cascade08Î<Ï<Ï<©A *cascade08©A™A™A≠A *cascade08≠AÆAÆA≤A *cascade08≤A≥A≥AûB *cascade08ûBûBûBÄD *cascade08ÄDÅDÅDÖD *cascade08ÖDÜDÜDäD *cascade08äDãDãDíH *cascade08íHìHìHóH *cascade08óHòHòHúH *cascade08úHùHùH≥H *cascade08≥H¥H¥HÛL *cascade08ÛLÙLÙL©M *cascade08©M™M™M“M *cascade08“M‘M‘M«X *cascade08«X»X»X’X *cascade08’X◊X◊XÕ^ *cascade08Õ^Œ^Œ^©_ *cascade08©_™_™_†d *cascade08†d°d°d£d *cascade08£d§d§d¶d *cascade08¶dßdßdÃg *cascade08ÃgÕgÕg˘m *cascade08˘m˙m˙m¬s *cascade08¬s√s√s–s *cascade08–s“s“sât *cascade08âtätätìv *cascade08ìvîvîvÒv *cascade08ÒvÚvÚvﬁw *cascade08ﬁwﬂwﬂwñ{ *cascade08ñ{ó{ó{•| *cascade08•|¶|¶|˘| *cascade08˘|˘|˘|ï} *cascade08ï}ñ}ñ}«} *cascade08«}…}…}‚} *cascade08‚}„}„}ƒÉ *cascade08
+ƒÉ≈É≈É«É *cascade08
+«É»É»É É *cascade08
+ ÉÀÉÀÉ÷Ü *cascade08
+÷Ü◊Ü◊ÜÆá *cascade08
+ÆáØáØá±á *cascade08
+±á≤á≤á¥á *cascade08
+¥áµáµáËá *cascade08
+ËáÈáÈáÎá *cascade08
+ÎáÏáÏáÓá *cascade08
+ÓáÔáÔáöà *cascade08
+öàõàõàùà *cascade08
+ùàûàûà†à *cascade08
+†à°à°à‡à *cascade08
+‡à·à·à‰à *cascade08
+‰àÂàÂàËà *cascade08
+ËàÈàÈàæâ *cascade08
+æâøâøâÀâ *cascade08
+ÀâÃâÃâÈâ *cascade08
+ÈâÍâÍâœä *cascade08
+œä–ä–äıä *cascade08
+ıäˆäˆäÅå *cascade08
+ÅåÇåÇåøå *cascade08
+øå¿å¿åÚå *cascade08
+ÚåÛåÛå‹ç *cascade08
+‹ç›ç›çêé *cascade08
+êéëéëé√é *cascade08
+√éƒéƒé≠è *cascade08
+≠èÆèÆè·è *cascade08
+·è‚è‚èîê *cascade08
+îêïêïê˛ê *cascade08
+˛êˇêˇêõë *cascade08
+õëúëúëÀë *cascade08
+ÀëÃëÃëËí *cascade08
+ËíÈíÈíˆí *cascade08
+ˆí˜í˜íéì *cascade08
+éìèìèì´ì *cascade08
+´ì¨ì¨ì”ì *cascade08
+”ì‘ì‘ì¯ì *cascade08
+¯ì˘ì˘ìõî *cascade08
+õîúîúî∂î *cascade08
+∂î∑î∑î—î *cascade08
+—î“î“î≤ï *cascade08
+≤ï≥ï≥ï‘ï *cascade08
+‘ï’ï’ïÏï *cascade08
+ÏïÌïÌïâñ *cascade08
+âñãñãñ‹ñ *cascade08
+‹ñ›ñ›ñ•ó *cascade08
+•ó¶ó¶óøó *cascade08
+øó¿ó¿ó‰ó *cascade08
+‰óÂóÂó˝ó *cascade08
+˝óÅòÅò‡ô *cascade08
+‡ô·ô·ôÌô *cascade08
+ÌôÓôÓô˝ô *cascade08
+˝ô˛ô˛ôçö *cascade08
+çöéöéö∆ú *cascade08
+∆ú«ú«úÓú *cascade08
+ÓúÔúÔúÛù *cascade08
+ÛùÙùÙùÉû *cascade08
+ÉûÑûÑûöû *cascade08
+öûõûõûÆû *cascade08
+ÆûØûØûÌû *cascade08
+ÌûÓûÓû˙û *cascade08
+˙û˚û˚ûíü *cascade08
+íüìüìü∫ü *cascade08
+∫üªüªü÷ü *cascade08
+÷ü◊ü◊üÁü *cascade08
+ÁüËüËü™† *cascade08
+™†´†´†Ë† *cascade08
+Ë†È†È†ì° *cascade08
+ì°î°î°•° *cascade08
+•°¶°¶°‘° *cascade08
+‘°’°’°‹° *cascade08
+‹°›°›°ﬂ° *cascade08
+ﬂ°‡°‡°‚° *cascade08
+‚°„°„°Ï° *cascade08
+Ï°Ì°Ì°¨¢ *cascade08
+¨¢≠¢≠¢Ω¢ *cascade08
+Ω¢æ¢æ¢÷¢ *cascade08
+÷¢◊¢◊¢Í¢ *cascade08
+Í¢Î¢Î¢ú£ *cascade08
+ú£ù£ù£≠£ *cascade08
+≠£Æ£Æ£…£ *cascade08
+…£ £ £ï§ *cascade08
+ï§ñ§ñ§¢§ *cascade08
+¢§£§£§¥§ *cascade08
+¥§µ§µ§π§ *cascade08
+π§∫§∫§æ§ *cascade08
+æ§ø§ø§÷§ *cascade08
+÷§◊§◊§È§ *cascade08
+È§Í§Í§∂• *cascade08
+∂•∑•∑•«• *cascade08
+«•»•»•Ï• *cascade08
+Ï•Ì•Ì•˝• *cascade08
+˝•˛•˛•Ç¶ *cascade08
+Ç¶É¶É¶≈¶ *cascade08
+≈¶∆¶∆¶œ¶ *cascade08
+œ¶–¶–¶—¶ *cascade08
+—¶’¶’¶Ë¶ *cascade08
+Ë¶Í¶Í¶Ó¶ *cascade08
+Ó¶Ô¶Ô¶âß *cascade08
+âßäßäßìß *cascade08
+ìßîßîßïß *cascade08
+ïßôßôß¨ß *cascade08
+¨ßÆßÆßÃß *cascade08
+ÃßŒßŒß√© *cascade08
+√©ƒ©ƒ©∆© *cascade08
+∆©«©«©…© *cascade08
+…© © ©Á© *cascade08
+Á©Ë©Ë©Í© *cascade08
+Í©Î©Î©Ì© *cascade08
+Ì©Ó©Ó©•¨ *cascade08
+•¨ß¨ß¨√≠ *cascade08
+√≠ƒ≠ƒ≠ˇ≠ *cascade08
+ˇ≠ÄÆÄÆŸ≤ *cascade08
+Ÿ≤⁄≤⁄≤›≤ *cascade08
+›≤ﬁ≤ﬁ≤‚≤ *cascade08
+‚≤„≤„≤‡Ω *cascade08
+‡Ω·Ω·Ω„Ω *cascade08
+„Ω‰Ω‰ΩÊΩ *cascade08
+ÊΩÁΩÁΩùæ *cascade08
+ùæüæüæ±æ *cascade08
+±æ≤æ≤æ¥æ *cascade08
+¥æµæµæ…æ *cascade08
+…æÀæÀæÂæ *cascade08
+ÂæÁæÁæ˘æ *cascade08
+˘æ˙æ˙æÓ¬ *cascade08
+Ó¬¬¬ˇ¬ *cascade08
+ˇ¬Å√Å√ã√ *cascade08
+ã√å√å√ç√ *cascade08
+ç√é√é√†√ *cascade08
+†√¢√¢√µ√ *cascade08
+µ√∂√∂√∑√ *cascade08
+∑√∏√∏√Ã√ *cascade08
+Ã√Œ√Œ√Ë√ *cascade08
+Ë√È√È√˜≈ *cascade08
+˜≈¯≈¯≈π∆ *cascade08
+π∆∫∆∫∆ÖÀ *cascade08
+ÖÀâÀâÀöÀ *cascade08
+öÀúÀúÀÔÀ *cascade08
+ÔÀÛÀÛÀèÃ *cascade08
+èÃëÃëÃîÃ *cascade08
+îÃïÃïÃ§Ã *cascade08
+§Ã®Ã®ÃπÃ *cascade08
+πÃªÃªÃΩÃ *cascade08
+ΩÃæÃæÃ‘Ã *cascade08
+‘ÃÿÃÿÃÊÃ *cascade08
+ÊÃËÃËÃÍÃ *cascade08
+ÍÃÎÃÎÃàÕ *cascade08
+àÕåÕåÕûÕ *cascade08
+ûÕ¢Õ¢Õ¥Õ *cascade08
+¥Õ∂Õ∂ÕπÕ *cascade08
+πÕ∫Õ∫ÕÕÕ *cascade08
+ÕÕ—Õ—ÕÌÕ *cascade08
+ÌÕÔÕÔÕÒÕ *cascade08
+ÒÕÛÕÛÕÁœ *cascade08
+ÁœÈœÈœÉ– *cascade08
+É–¥–¥–ù— *cascade08
+ù—°—°—÷— *cascade082Efile:///c:/xampp/htdocs/koby/wp-content/themes/rappod-child/style.css

@@ -1,0 +1,60 @@
+# Button Implementation Plan
+
+The goal is to add a consistent "Download PDF" button to the catalog page using existing theme styles.
+
+## Proposed Changes
+
+### Theme Functionality
+
+#### [MODIFY] [functions.php](file:///c:/xampp/htdocs/koby/wp-content/themes/rappod-child/functions.php)
+
+- Create a new shortcode `[koby_boton_pdf]` that renders a button.
+- The button will use the theme's native `.elementor-button` class for consistent styling (Yellow, rounded, dashed border).
+- Include a FontAwesome download icon `<i class="fa-solid fa-download"></i>`.
+- **Attributes**:
+    - `url`: The link to the PDF (default to `#` if not provided).
+    - `texto`: The button text (default to "Descargar Catálogo").
+
+## Debugging "File Not Found" Error
+
+The error accessing the catalog page is likely due to:
+1.  **Missing Template:** There is no `page-catalogo.php` in your child theme. WordPress falls back to `archive-product.php` (parent theme).
+2.  **Hardcoded Redirect:** Your `functions.php` redirects users to `/catalogo/`. If the page slug is actually `tienda` or `shop`, this leads to a 404.
+3.  **Permalinks:** The rewrite rules might need flushing (Settings > Permalinks > Save).
+
+**Action:** We will verify the redirect logic and ensure the shortcode works regardless of the page slug.
+
+## Proposed Changes
+
+### Theme Functionality
+
+#### [MODIFY] [functions.php](file:///c:/xampp/htdocs/koby/wp-content/themes/rappod-child/functions.php)
+
+1.  **Create Shortcode `[koby_boton_pdf]`:**
+    - Renders the "Descargar Catálogo" button.
+    - Uses existing `.elementor-button` styles (Yellow, Rounded).
+    - Fully responsive.
+
+2.  **Optional: Auto-Insert on Catalog Page:**
+    - We can hook this button to `woocommerce_archive_description` so it appears automatically at the top of the Shop/Catalog page.
+
+- **Attributes**:
+    - `url`: Link to the PDF.
+    - `texto`: Button text (Default: "Descargar Catálogo").
+
+
+> [!TIP]
+> **Why a Shortcode?**
+> This allows you to place the button anywhere in Elementor (using a Shortcode widget) just by typing `[koby_boton_pdf url="LINK_DEL_PDF"]`. It guarantees the style always matches your site without manual CSS every time.
+
+> [!NOTE]
+> **Text Recommendation**
+> Instead of "Para descargar el catalogo haga click en el boton", we recommend just **"Descargar Catálogo"** inside the button. It's cleaner and more modern.
+
+## Verification Plan
+
+### Manual Verification
+1.  Add the shortcode `[koby_boton_pdf]` to a test page or the catalog page via Elementor.
+2.  Verify the button appears with the correct yellow style (`#f6b100`) and rounded corners (`50px`).
+3.  Verify the hover effect turns it blue (`#279ed9`).
+4.  Verify the icon appears correctly.

@@ -1,0 +1,10 @@
+# Task List
+
+- [/] Analyze current structure and button styles <!-- id: 0 -->
+    - [ ] Search for "catalogo" related files <!-- id: 1 -->
+    - [ ] Inspect theme CSS for button classes <!-- id: 2 -->
+- [ ] Propose implementation plan <!-- id: 3 -->
+    - [ ] Suggest button text and placement <!-- id: 4 -->
+    - [ ] Plan code changes (Elementor widget or PHP template) <!-- id: 5 -->
+- [ ] Implement changes (if approved) <!-- id: 6 -->
+- [ ] Verify implementation <!-- id: 7 -->
