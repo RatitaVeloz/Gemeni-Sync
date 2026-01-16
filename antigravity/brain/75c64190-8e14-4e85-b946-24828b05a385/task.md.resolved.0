@@ -1,0 +1,7 @@
+# Fix Carousel Responsiveness on Mobile
+
+- [ ] Analyze `style.css` for conflicting styles <!-- id: 0 -->
+- [ ] Determine CSS selector for the carousel <!-- id: 1 -->
+- [ ] Create implementation plan <!-- id: 2 -->
+- [ ] Apply CSS fix in `style.css` <!-- id: 3 -->
+- [ ] Verify fix <!-- id: 4 -->

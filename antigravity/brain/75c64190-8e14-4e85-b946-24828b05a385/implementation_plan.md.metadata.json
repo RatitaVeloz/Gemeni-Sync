@@ -1,0 +1,6 @@
+{
+  "artifactType": "ARTIFACT_TYPE_IMPLEMENTATION_PLAN",
+  "summary": "Target the `.swiper` container width directly. The issue is `width: calc(100% - 60px)` added by Elementor when arrows are positioned \"outside\". We will force it to `100%` on mobile for the `.mobile-carousel-fix` class.",
+  "updatedAt": "2026-01-15T23:45:27.738763500Z",
+  "version": "2"
+}

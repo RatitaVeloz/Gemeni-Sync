@@ -1,0 +1,27 @@
+# Fix Mobile Carousel Responsiveness
+
+The goal is to ensure the carousel displays a single slide effectively occupying 100% width on mobile devices (screen width <= 767px), fixing the issue where multiple or partial slides are shown.
+
+## User Review Required
+> [!IMPORTANT]
+> To apply this fix to the specific carousel, you will need to add the CSS class `mobile-carousel-fix` to the carousel widget's settings in Elementor (Advanced > Layout > CSS Classes).
+
+## Proposed Changes
+
+### Theme CSS
+#### [MODIFY] [style.css](file:///c:/xampp/htdocs/beatwines/wp-content/themes/hello-elementor-child/style.css)
+- Update the media query for `max-width: 767px`.
+- Enhance the selector and properties:
+    - Target `.mobile-carousel-fix .swiper-slide`
+    - Set `width: 100% !important`
+    - Set `min-width: 100% !important`
+    - Set `margin-right: 0 !important` (to remove potential gaps affecting fit)
+    - Set `flex: 0 0 100% !important` (shorthand for flex-grow, flex-shrink, flex-basis)
+
+## Verification Plan
+
+### Manual Verification
+1.  Agent submits the updated CSS changes.
+2.  **User Action**: User confirms the class `mobile-carousel-fix` is still applied.
+3.  User saves and views the page on a mobile device.
+4.  Confirm that only one slide is visible at a time.
